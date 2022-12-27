@@ -1,6 +1,5 @@
 /// App level configuration variables
 class Configs {
-
   /// Base API URL of The petfinder API
   ///
   /// See: https://www.petfinder.com/developers/v2/docs/
