@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'model.dart';
+part of 'pet_list.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -20,7 +20,7 @@ PetList _$ModelFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Model {
-  List<Animal>? get animals => throw _privateConstructorUsedError;
+  List<Pet>? get animals => throw _privateConstructorUsedError;
   Pagination? get pagination => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -33,7 +33,7 @@ abstract class $ModelCopyWith<$Res> {
   factory $ModelCopyWith(PetList value, $Res Function(PetList) then) =
       _$ModelCopyWithImpl<$Res, PetList>;
   @useResult
-  $Res call({List<Animal>? animals, Pagination? pagination});
+  $Res call({List<Pet>? animals, Pagination? pagination});
 
   $PaginationCopyWith<$Res>? get pagination;
 }
@@ -58,7 +58,7 @@ class _$ModelCopyWithImpl<$Res, $Val extends PetList>
       animals: freezed == animals
           ? _value.animals
           : animals // ignore: cast_nullable_to_non_nullable
-              as List<Animal>?,
+              as List<Pet>?,
       pagination: freezed == pagination
           ? _value.pagination
           : pagination // ignore: cast_nullable_to_non_nullable
@@ -85,7 +85,7 @@ abstract class _$$_ModelCopyWith<$Res> implements $ModelCopyWith<$Res> {
       __$$_ModelCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({List<Animal>? animals, Pagination? pagination});
+  $Res call({List<Pet>? animals, Pagination? pagination});
 
   @override
   $PaginationCopyWith<$Res>? get pagination;
@@ -107,7 +107,7 @@ class __$$_ModelCopyWithImpl<$Res> extends _$ModelCopyWithImpl<$Res, _$_Model>
       animals: freezed == animals
           ? _value._animals
           : animals // ignore: cast_nullable_to_non_nullable
-              as List<Animal>?,
+              as List<Pet>?,
       pagination: freezed == pagination
           ? _value.pagination
           : pagination // ignore: cast_nullable_to_non_nullable
@@ -119,14 +119,14 @@ class __$$_ModelCopyWithImpl<$Res> extends _$ModelCopyWithImpl<$Res, _$_Model>
 /// @nodoc
 @JsonSerializable()
 class _$_Model implements _Model {
-  _$_Model({final List<Animal>? animals, this.pagination}) : _animals = animals;
+  _$_Model({final List<Pet>? animals, this.pagination}) : _animals = animals;
 
   factory _$_Model.fromJson(Map<String, dynamic> json) =>
       _$$_ModelFromJson(json);
 
-  final List<Animal>? _animals;
+  final List<Pet>? _animals;
   @override
-  List<Animal>? get animals {
+  List<Pet>? get animals {
     final value = _animals;
     if (value == null) return null;
     if (_animals is EqualUnmodifiableListView) return _animals;
@@ -172,13 +172,13 @@ class _$_Model implements _Model {
 }
 
 abstract class _Model implements PetList {
-  factory _Model({final List<Animal>? animals, final Pagination? pagination}) =
+  factory _Model({final List<Pet>? animals, final Pagination? pagination}) =
       _$_Model;
 
   factory _Model.fromJson(Map<String, dynamic> json) = _$_Model.fromJson;
 
   @override
-  List<Animal>? get animals;
+  List<Pet>? get animals;
   @override
   Pagination? get pagination;
   @override

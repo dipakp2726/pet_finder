@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'model.dart';
+part of 'pet_list.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
@@ -8,7 +8,7 @@ part of 'model.dart';
 
 _$_Model _$$_ModelFromJson(Map<String, dynamic> json) => _$_Model(
       animals: (json['animals'] as List<dynamic>?)
-          ?.map((e) => Animal.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => Pet.fromJson(e as Map<String, dynamic>))
           .toList(),
       pagination: json['pagination'] == null
           ? null

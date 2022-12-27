@@ -9,12 +9,12 @@ import 'links.dart';
 import 'photo.dart';
 import 'video.dart';
 
-part 'animal.freezed.dart';
-part 'animal.g.dart';
+part 'pet.freezed.dart';
+part 'pet.g.dart';
 
 @freezed
-class Animal with _$Animal {
-  factory Animal({
+class Pet with _$Animal {
+  factory Pet({
     int? id,
     @JsonKey(name: 'organization_id') String? organizationId,
     String? url,
@@ -39,5 +39,5 @@ class Animal with _$Animal {
     @JsonKey(name: '_links') Links? links,
   }) = _Animal;
 
-  factory Animal.fromJson(Map<String, dynamic> json) => _$AnimalFromJson(json);
+  factory Pet.fromJson(Map<String, dynamic> json) => _$AnimalFromJson(json);
 }

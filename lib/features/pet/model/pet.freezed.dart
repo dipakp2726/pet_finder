@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'animal.dart';
+part of 'pet.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,7 +14,7 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-Animal _$AnimalFromJson(Map<String, dynamic> json) {
+Pet _$AnimalFromJson(Map<String, dynamic> json) {
   return _Animal.fromJson(json);
 }
 
@@ -48,13 +48,13 @@ mixin _$Animal {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $AnimalCopyWith<Animal> get copyWith => throw _privateConstructorUsedError;
+  $AnimalCopyWith<Pet> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $AnimalCopyWith<$Res> {
-  factory $AnimalCopyWith(Animal value, $Res Function(Animal) then) =
-      _$AnimalCopyWithImpl<$Res, Animal>;
+  factory $AnimalCopyWith(Pet value, $Res Function(Pet) then) =
+      _$AnimalCopyWithImpl<$Res, Pet>;
   @useResult
   $Res call(
       {int? id,
@@ -89,7 +89,7 @@ abstract class $AnimalCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$AnimalCopyWithImpl<$Res, $Val extends Animal>
+class _$AnimalCopyWithImpl<$Res, $Val extends Pet>
     implements $AnimalCopyWith<$Res> {
   _$AnimalCopyWithImpl(this._value, this._then);
 
@@ -645,7 +645,7 @@ class _$_Animal implements _Animal {
   }
 }
 
-abstract class _Animal implements Animal {
+abstract class _Animal implements Pet {
   factory _Animal(
       {final int? id,
       @JsonKey(name: 'organization_id') final String? organizationId,
