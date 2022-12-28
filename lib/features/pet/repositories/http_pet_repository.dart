@@ -47,6 +47,6 @@ class HttpPetRepository implements PetRepository {
       },
     );
 
-    return Pet.fromJson(responseData);
+    return Pet.fromJson(responseData['animal'] as Map<String, dynamic>);
   }
 }

@@ -13,15 +13,12 @@ class AppThemes {
       colorScheme: const ColorScheme.dark(
         primary: AppColors.primary,
         secondary: AppColors.secondary,
-        background: AppColors.black,
+        // background: AppColors.black,
       ),
-      backgroundColor: AppColors.black,
-      scaffoldBackgroundColor: AppColors.black,
       textTheme: TextThemes.darkTextTheme,
       primaryTextTheme: TextThemes.primaryTextTheme,
       appBarTheme: const AppBarTheme(
         elevation: 0,
-        backgroundColor: AppColors.black,
         titleTextStyle: AppTextStyles.h2,
       ),
     );

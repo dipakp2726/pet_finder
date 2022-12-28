@@ -12,6 +12,8 @@ class AppColors {
   /// App black color
   static const Color black = Color(0xff141414);
 
+  static const Color aliceWhite = Color(0xffFEF4F4);
+
   /// App white color
   static const Color white = Color(0xffffffff);
 
