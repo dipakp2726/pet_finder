@@ -47,29 +47,21 @@ class PetImagesSliderPageState extends State<PetImagesSliderPage> {
               controller: pageController,
               itemCount: widget.images.length,
               itemBuilder: (BuildContext context, int index) {
-                return Stack(
-                  children: [
-                    Center(
-                      child: InteractiveViewer(
-                        child: Positioned.fill(
-                          child: SizedBox(
-                            // width: MediaQuery.of(context).size.width,
-                            child: widget.images[index].large == null
-                                ? Container()
-                                : AppCachedNetworkImage(
-                                    key: ValueKey(
-                                      '__pet_image_slider_${index}__',
-                                    ),
-                                    imageUrl: widget.images[index].large!,
-                                    fit: BoxFit.cover,
-                                    isLoaderShimmer: false,
-                                    alignment: Alignment.topCenter,
-                                  ),
+                return SizedBox(
+                  // width: MediaQuery.of(context).size.width,
+                  child: widget.images[index].large == null
+                      ? Container()
+                      : InteractiveViewer(
+                        child: AppCachedNetworkImage(
+                            key: ValueKey(
+                              '__pet_image_slider_${index}__',
+                            ),
+                            imageUrl: widget.images[index].large!,
+                            fit: BoxFit.cover,
+                            isLoaderShimmer: false,
+                            alignment: Alignment.topCenter,
                           ),
-                        ),
                       ),
-                    ),
-                  ],
                 );
               },
             ),
