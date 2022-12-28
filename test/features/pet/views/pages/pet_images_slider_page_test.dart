@@ -89,6 +89,7 @@ void main() {
       await tester.pumpProviderApp(
         PetImagesSliderPage(
           images: DummyPets.pet1.photos!,
+          initialImageIndex: 1,
         ),
       );
     });

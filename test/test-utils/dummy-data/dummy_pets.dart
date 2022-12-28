@@ -169,8 +169,91 @@ class DummyPets {
       }
     }
   };
+  static final petRespWithoutImages = {
+    "animal": {
+      "id": 59243302,
+      "organization_id": "OH415",
+      "url":
+          "https:\/\/www.petfinder.com\/dog\/alfredo-59243302\/oh\/portsmouth\/sierras-haven-for-new-and-used-pets-oh415\/?referrer_id=4e8653bb-ceda-4744-a242-5d1078661f1a",
+      "type": "Dog",
+      "species": "Dog",
+      "breeds": {
+        "primary": "German Shepherd Dog",
+        "secondary": null,
+        "mixed": true,
+        "unknown": false
+      },
+      "colors": {
+        "primary": "Black",
+        "secondary": "Yellow \/ Tan \/ Blond \/ Fawn",
+        "tertiary": null
+      },
+      "age": "Baby",
+      "gender": "Male",
+      "size": "Large",
+      "coat": "Short",
+      "attributes": {
+        "spayed_neutered": false,
+        "house_trained": false,
+        "declawed": null,
+        "special_needs": false,
+        "shots_current": true
+      },
+      "environment": {"children": null, "dogs": null, "cats": null},
+      "tags": [],
+      "name": "Alfredo",
+      "description":
+          "For more information on Alfredo please call Sierra\u0026#039;s Haven at 1-740-353-5100. Come visit us any time to meet and get...",
+      "organization_animal_id": "A0051689598",
+      "photos": [
+        {
+          "small": 'avatar_url',
+          "medium": 'avatar_url',
+          "large": 'avatar_url',
+          "full": "'avatar_url'"
+        },
+        {
+          "small": 'avatar_url',
+          "medium": 'avatar_url',
+          "large": 'avatar_url',
+          "full": 'avatar_url'
+        }
+      ],
+      "primary_photo_cropped": {
+        "small": 'avatar_url',
+        "medium": 'avatar_url',
+        "large": 'avatar_url',
+        "full": 'avatar_url'
+      },
+      "videos": [],
+      "status": "adoptable",
+      "status_changed_at": "2022-12-23T01:55:35+0000",
+      "published_at": "2022-12-23T01:55:33+0000",
+      "distance": null,
+      "contact": {
+        "email": "sierrashaven@hotmail.com",
+        "phone": "(740) 353-5100",
+        "address": {
+          "address1": "80 Easter Drive",
+          "address2": null,
+          "city": "Portsmouth",
+          "state": "OH",
+          "postcode": "45662",
+          "country": "US"
+        }
+      },
+      "_links": {
+        "self": {"href": "\/v2\/animals\/59243302"},
+        "type": {"href": "\/v2\/types\/dog"},
+        "organization": {"href": "\/v2\/organizations\/oh415"}
+      }
+    }
+  };
 
   static final petList1 = PetList.fromJson(petListResp);
 
   static final pet1 = Pet.fromJson(petResp['animal']!);
+
+  static final petWithoutImage =
+      Pet.fromJson(petRespWithoutImages['animal']!).copyWith(photos: null);
 }

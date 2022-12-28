@@ -3,7 +3,6 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:pet_heaven/core/configs/styles/app_colors.dart';
-import 'package:pet_heaven/core/configs/styles/ui_constants.dart';
 import 'package:pet_heaven/core/widgets/app_cached_network_image.dart';
 import 'package:pet_heaven/core/widgets/error_view.dart';
 import 'package:pet_heaven/core/widgets/list_item_shimmer.dart';
@@ -29,9 +28,8 @@ class PetListItem extends ConsumerWidget {
               MaterialPageRoute<PetDetailsPage>(
                 builder: (context) => PetDetailsPage(
                   petId: data.id!,
-                  petAvatar: data.photos!.isNotEmpty
-                      ? data.photos!.first.large!
-                      : UIConstants.petPlaceHolderImageUrl,
+                  petAvatar:
+                      data.photos!.isNotEmpty ? data.photos!.first.large : null,
                   petName: data.name!,
                 ),
               ),
@@ -58,14 +56,20 @@ class PetListItem extends ConsumerWidget {
                     ),
                     child: Stack(
                       children: [
-                        AppCachedNetworkImage(
-                          imageUrl: data.photos!.isNotEmpty
-                              ? data.photos!.first.large!
-                              : UIConstants.petPlaceHolderImageUrl,
-                          fit: BoxFit.cover,
-                          width: MediaQuery.of(context).size.width,
-                          height: 160,
-                        ),
+                        if (data.photos == null || data.photos!.isEmpty)
+                          Image.asset(
+                            'assets/images/placeholder.png',
+                            fit: BoxFit.cover,
+                            width: MediaQuery.of(context).size.width,
+                            height: 160,
+                          )
+                        else
+                          AppCachedNetworkImage(
+                            imageUrl: data.photos!.first.large!,
+                            fit: BoxFit.cover,
+                            width: MediaQuery.of(context).size.width,
+                            height: 160,
+                          ),
                         AdoptedShadowWidget(petId: data.id!),
                         AlreadyAdoptedMarker(petId: data.id!),
                       ],
@@ -104,10 +108,12 @@ class PetListItem extends ConsumerWidget {
                             child: Text(
                               data.contact?.address?.city ?? ' city',
                               overflow: TextOverflow.ellipsis,
-                              style:
-                                  Theme.of(context).textTheme.bodyText2!.copyWith(
-                                        color: AppColors.black,
-                                      ),
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .bodyText2!
+                                  .copyWith(
+                                    color: AppColors.black,
+                                  ),
                             ),
                           ),
                           Text(
