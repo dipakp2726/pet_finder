@@ -31,6 +31,8 @@ class TokenInterceptor extends Interceptor {
 
       await storageService.set(tokenKey, token);
 
+      err.requestOptions.headers['Authorization'] = 'Bearer $token';
+
       return handler.resolve(await Dio().fetch(err.requestOptions));
     }
 
