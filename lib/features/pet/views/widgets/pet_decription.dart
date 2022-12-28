@@ -33,7 +33,7 @@ class PetBio extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'Biography',
+                'Description',
                 style: Theme.of(context).textTheme.headline2,
               ),
               const SizedBox(height: 20),

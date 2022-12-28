@@ -32,10 +32,11 @@ class PetList extends ConsumerWidget {
           child: GridView.builder(
             itemCount: count,
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
-                childAspectRatio: .80,
-                crossAxisSpacing: 10,
-                mainAxisSpacing: 10),
+              crossAxisCount: 2,
+              childAspectRatio: .75,
+              crossAxisSpacing: 10,
+              mainAxisSpacing: 10,
+            ),
             itemBuilder: (context, index) {
               final currentPet = ref
                   .watch(getPetListProvider(page: index ~/ 20))

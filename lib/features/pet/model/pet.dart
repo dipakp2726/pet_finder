@@ -10,6 +10,7 @@ import 'photo.dart';
 import 'video.dart';
 
 part 'pet.freezed.dart';
+
 part 'pet.g.dart';
 
 @freezed
@@ -40,4 +41,17 @@ class Pet with _$Pet {
   }) = _Animal;
 
   factory Pet.fromJson(Map<String, dynamic> json) => _$PetFromJson(json);
+}
+
+extension Price on String {
+  /// generate price based on name chars
+  String getPrice() {
+    // Convert the name to a number by summing up the ASCII values of its characters
+    final nameValue = codeUnits.reduce((value, unit) => value + unit);
+    // Generate a number between 100 and 1000
+    final number = nameValue.remainder(901) + 100;
+
+    // Return the number
+    return '\$ ${number.toDouble()}';
+  }
 }

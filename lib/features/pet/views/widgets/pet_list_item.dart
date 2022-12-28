@@ -6,6 +6,7 @@ import 'package:pet_heaven/core/configs/styles/app_colors.dart';
 import 'package:pet_heaven/core/widgets/app_cached_network_image.dart';
 import 'package:pet_heaven/core/widgets/error_view.dart';
 import 'package:pet_heaven/core/widgets/list_item_shimmer.dart';
+import 'package:pet_heaven/features/pet/model/pet.dart';
 import 'package:pet_heaven/features/pet/providers/adoption_provider.dart';
 import 'package:pet_heaven/features/pet/providers/current_pet_provider.dart';
 import 'package:pet_heaven/features/pet/views/pages/pet_details_page.dart';
@@ -83,8 +84,13 @@ class PetListItem extends ConsumerWidget {
                               color: AppColors.black,
                             ),
                       ),
-                      const SizedBox(
-                        height: 8,
+                      Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 4.0),
+                        child: Text(
+                          data.name!.getPrice(),
+                          overflow: TextOverflow.ellipsis,
+                          style: Theme.of(context).primaryTextTheme.headline4,
+                        ),
                       ),
                       Row(
                         children: [
