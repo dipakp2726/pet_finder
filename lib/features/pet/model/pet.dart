@@ -13,7 +13,7 @@ part 'pet.freezed.dart';
 part 'pet.g.dart';
 
 @freezed
-class Pet with _$Animal {
+class Pet with _$Pet {
   factory Pet({
     int? id,
     @JsonKey(name: 'organization_id') String? organizationId,
@@ -39,5 +39,5 @@ class Pet with _$Animal {
     @JsonKey(name: '_links') Links? links,
   }) = _Animal;
 
-  factory Pet.fromJson(Map<String, dynamic> json) => _$AnimalFromJson(json);
+  factory Pet.fromJson(Map<String, dynamic> json) => _$PetFromJson(json);
 }

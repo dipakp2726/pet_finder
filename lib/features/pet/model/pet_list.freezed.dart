@@ -14,24 +14,24 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-PetList _$ModelFromJson(Map<String, dynamic> json) {
+PetList _$PetListFromJson(Map<String, dynamic> json) {
   return _Model.fromJson(json);
 }
 
 /// @nodoc
-mixin _$Model {
+mixin _$PetList {
   List<Pet>? get animals => throw _privateConstructorUsedError;
   Pagination? get pagination => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $ModelCopyWith<PetList> get copyWith => throw _privateConstructorUsedError;
+  $PetListCopyWith<PetList> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $ModelCopyWith<$Res> {
-  factory $ModelCopyWith(PetList value, $Res Function(PetList) then) =
-      _$ModelCopyWithImpl<$Res, PetList>;
+abstract class $PetListCopyWith<$Res> {
+  factory $PetListCopyWith(PetList value, $Res Function(PetList) then) =
+      _$PetListCopyWithImpl<$Res, PetList>;
   @useResult
   $Res call({List<Pet>? animals, Pagination? pagination});
 
@@ -39,9 +39,9 @@ abstract class $ModelCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$ModelCopyWithImpl<$Res, $Val extends PetList>
-    implements $ModelCopyWith<$Res> {
-  _$ModelCopyWithImpl(this._value, this._then);
+class _$PetListCopyWithImpl<$Res, $Val extends PetList>
+    implements $PetListCopyWith<$Res> {
+  _$PetListCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -80,7 +80,7 @@ class _$ModelCopyWithImpl<$Res, $Val extends PetList>
 }
 
 /// @nodoc
-abstract class _$$_ModelCopyWith<$Res> implements $ModelCopyWith<$Res> {
+abstract class _$$_ModelCopyWith<$Res> implements $PetListCopyWith<$Res> {
   factory _$$_ModelCopyWith(_$_Model value, $Res Function(_$_Model) then) =
       __$$_ModelCopyWithImpl<$Res>;
   @override
@@ -92,7 +92,7 @@ abstract class _$$_ModelCopyWith<$Res> implements $ModelCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_ModelCopyWithImpl<$Res> extends _$ModelCopyWithImpl<$Res, _$_Model>
+class __$$_ModelCopyWithImpl<$Res> extends _$PetListCopyWithImpl<$Res, _$_Model>
     implements _$$_ModelCopyWith<$Res> {
   __$$_ModelCopyWithImpl(_$_Model _value, $Res Function(_$_Model) _then)
       : super(_value, _then);
@@ -139,7 +139,7 @@ class _$_Model implements _Model {
 
   @override
   String toString() {
-    return 'Model(animals: $animals, pagination: $pagination)';
+    return 'PetList(animals: $animals, pagination: $pagination)';
   }
 
   @override

@@ -14,12 +14,12 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-Pet _$AnimalFromJson(Map<String, dynamic> json) {
+Pet _$PetFromJson(Map<String, dynamic> json) {
   return _Animal.fromJson(json);
 }
 
 /// @nodoc
-mixin _$Animal {
+mixin _$Pet {
   int? get id => throw _privateConstructorUsedError;
   @JsonKey(name: 'organization_id')
   String? get organizationId => throw _privateConstructorUsedError;
@@ -48,13 +48,13 @@ mixin _$Animal {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $AnimalCopyWith<Pet> get copyWith => throw _privateConstructorUsedError;
+  $PetCopyWith<Pet> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $AnimalCopyWith<$Res> {
-  factory $AnimalCopyWith(Pet value, $Res Function(Pet) then) =
-      _$AnimalCopyWithImpl<$Res, Pet>;
+abstract class $PetCopyWith<$Res> {
+  factory $PetCopyWith(Pet value, $Res Function(Pet) then) =
+      _$PetCopyWithImpl<$Res, Pet>;
   @useResult
   $Res call(
       {int? id,
@@ -89,9 +89,8 @@ abstract class $AnimalCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$AnimalCopyWithImpl<$Res, $Val extends Pet>
-    implements $AnimalCopyWith<$Res> {
-  _$AnimalCopyWithImpl(this._value, this._then);
+class _$PetCopyWithImpl<$Res, $Val extends Pet> implements $PetCopyWith<$Res> {
+  _$PetCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -290,7 +289,7 @@ class _$AnimalCopyWithImpl<$Res, $Val extends Pet>
 }
 
 /// @nodoc
-abstract class _$$_AnimalCopyWith<$Res> implements $AnimalCopyWith<$Res> {
+abstract class _$$_AnimalCopyWith<$Res> implements $PetCopyWith<$Res> {
   factory _$$_AnimalCopyWith(_$_Animal value, $Res Function(_$_Animal) then) =
       __$$_AnimalCopyWithImpl<$Res>;
   @override
@@ -334,8 +333,7 @@ abstract class _$$_AnimalCopyWith<$Res> implements $AnimalCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_AnimalCopyWithImpl<$Res>
-    extends _$AnimalCopyWithImpl<$Res, _$_Animal>
+class __$$_AnimalCopyWithImpl<$Res> extends _$PetCopyWithImpl<$Res, _$_Animal>
     implements _$$_AnimalCopyWith<$Res> {
   __$$_AnimalCopyWithImpl(_$_Animal _value, $Res Function(_$_Animal) _then)
       : super(_value, _then);
@@ -566,7 +564,7 @@ class _$_Animal implements _Animal {
 
   @override
   String toString() {
-    return 'Animal(id: $id, organizationId: $organizationId, url: $url, type: $type, species: $species, breeds: $breeds, colors: $colors, age: $age, gender: $gender, size: $size, coat: $coat, attributes: $attributes, environment: $environment, tags: $tags, name: $name, description: $description, photos: $photos, videos: $videos, status: $status, publishedAt: $publishedAt, contact: $contact, links: $links)';
+    return 'Pet(id: $id, organizationId: $organizationId, url: $url, type: $type, species: $species, breeds: $breeds, colors: $colors, age: $age, gender: $gender, size: $size, coat: $coat, attributes: $attributes, environment: $environment, tags: $tags, name: $name, description: $description, photos: $photos, videos: $videos, status: $status, publishedAt: $publishedAt, contact: $contact, links: $links)';
   }
 
   @override

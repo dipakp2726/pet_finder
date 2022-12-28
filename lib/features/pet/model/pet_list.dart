@@ -7,11 +7,11 @@ part 'pet_list.freezed.dart';
 part 'pet_list.g.dart';
 
 @freezed
-class PetList with _$Model {
+class PetList with _$PetList {
   factory PetList({
     List<Pet>? animals,
     Pagination? pagination,
   }) = _Model;
 
-  factory PetList.fromJson(Map<String, dynamic> json) => _$ModelFromJson(json);
+  factory PetList.fromJson(Map<String, dynamic> json) => _$PetListFromJson(json);
 }
