@@ -83,6 +83,7 @@ class PetDetailsPage extends ConsumerWidget {
           AnimateInEffect(
             child: AdoptMeButton(
               petId: petId,
+              petName: petName,
             ),
           )
         ],
