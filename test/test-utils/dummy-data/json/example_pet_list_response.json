@@ -1,0 +1,70 @@
+
+{
+  "animals": [
+    {
+      "id": 59276506,
+      "organization_id": "CA2563",
+      "url": "https:\/\/www.petfinder.com\/dog\/jessie-59276506\/ca\/bonita\/paws4thought-animal-rescue-ca2563\/?referrer_id=4e8653bb-ceda-4744-a242-5d1078661f1a",
+      "type": "Dog",
+      "species": "Dog",
+      "breeds": {
+        "primary": "Cattle Dog",
+        "secondary": "German Shepherd Dog",
+        "mixed": true,
+        "unknown": false
+      },
+      "colors": {
+        "primary": "Brown \/ Chocolate",
+        "secondary": null,
+        "tertiary": null
+      },
+      "age": "Young",
+      "gender": "Female",
+      "size": "Medium",
+      "coat": null,
+      "attributes": {
+        "spayed_neutered": true,
+        "house_trained": false,
+        "declawed": null,
+        "special_needs": false,
+        "shots_current": true
+      },
+      "environment": {"children": null, "dogs": null, "cats": null},
+      "tags": [],
+      "name": "Jessie",
+      "description": null,
+      "organization_animal_id": "ps_77960229",
+      "photos": [],
+      "primary_photo_cropped": null,
+      "videos": [],
+      "status": "adoptable",
+      "status_changed_at": "2022-12-28T11:07:12+0000",
+      "published_at": "2022-12-28T11:07:11+0000",
+      "distance": null,
+      "contact": {
+        "email": "info@paws4thoughtrescue.com",
+        "phone": "(619) 200-8363",
+        "address": {
+          "address1": null,
+          "address2": null,
+          "city": "Bonita",
+          "state": "CA",
+          "postcode": "91908",
+          "country": "US"
+        }
+      },
+      "_links": {
+        "self": {"href": "\/v2\/animals\/59276506"},
+        "type": {"href": "\/v2\/types\/dog"},
+        "organization": {"href": "\/v2\/organizations\/ca2563"}
+      }
+    }
+  ],
+  "pagination": {
+    "count_per_page": 1,
+    "total_count": 263660,
+    "current_page": 1,
+    "total_pages": 13183,
+    "_links": {"next": {"href": "\/v2\/animals?page=2"}}
+  }
+}

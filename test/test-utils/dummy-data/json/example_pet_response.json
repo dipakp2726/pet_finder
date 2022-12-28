@@ -1,0 +1,88 @@
+{
+  "animal": {
+    "id": 59243302,
+    "organization_id": "OH415",
+    "url": "https:\/\/www.petfinder.com\/dog\/alfredo-59243302\/oh\/portsmouth\/sierras-haven-for-new-and-used-pets-oh415\/?referrer_id=4e8653bb-ceda-4744-a242-5d1078661f1a",
+    "type": "Dog",
+    "species": "Dog",
+    "breeds": {
+      "primary": "German Shepherd Dog",
+      "secondary": null,
+      "mixed": true,
+      "unknown": false
+    },
+    "colors": {
+      "primary": "Black",
+      "secondary": "Yellow \/ Tan \/ Blond \/ Fawn",
+      "tertiary": null
+    },
+    "age": "Baby",
+    "gender": "Male",
+    "size": "Large",
+    "coat": "Short",
+    "attributes": {
+      "spayed_neutered": false,
+      "house_trained": false,
+      "declawed": null,
+      "special_needs": false,
+      "shots_current": true
+    },
+    "environment": {
+      "children": null,
+      "dogs": null,
+      "cats": null
+    },
+    "tags": [],
+    "name": "Alfredo",
+    "description": "For more information on Alfredo please call Sierra\u0026#039;s Haven at 1-740-353-5100. Come visit us any time to meet and get...",
+    "organization_animal_id": "A0051689598",
+    "photos": [
+      {
+        "small": "https:\/\/dl5zpyw5k3jeb.cloudfront.net\/photos\/pets\/59243302\/1\/?bust=1671760532\u0026width=100",
+        "medium": "https:\/\/dl5zpyw5k3jeb.cloudfront.net\/photos\/pets\/59243302\/1\/?bust=1671760532\u0026width=300",
+        "large": "https:\/\/dl5zpyw5k3jeb.cloudfront.net\/photos\/pets\/59243302\/1\/?bust=1671760532\u0026width=600",
+        "full": "https:\/\/dl5zpyw5k3jeb.cloudfront.net\/photos\/pets\/59243302\/1\/?bust=1671760532"
+      },
+      {
+        "small": "https:\/\/dl5zpyw5k3jeb.cloudfront.net\/photos\/pets\/59243302\/2\/?bust=1671760532\u0026width=100",
+        "medium": "https:\/\/dl5zpyw5k3jeb.cloudfront.net\/photos\/pets\/59243302\/2\/?bust=1671760532\u0026width=300",
+        "large": "https:\/\/dl5zpyw5k3jeb.cloudfront.net\/photos\/pets\/59243302\/2\/?bust=1671760532\u0026width=600",
+        "full": "https:\/\/dl5zpyw5k3jeb.cloudfront.net\/photos\/pets\/59243302\/2\/?bust=1671760532"
+      }
+    ],
+    "primary_photo_cropped": {
+      "small": "https:\/\/dl5zpyw5k3jeb.cloudfront.net\/photos\/pets\/59243302\/1\/?bust=1671760532\u0026width=300",
+      "medium": "https:\/\/dl5zpyw5k3jeb.cloudfront.net\/photos\/pets\/59243302\/1\/?bust=1671760532\u0026width=450",
+      "large": "https:\/\/dl5zpyw5k3jeb.cloudfront.net\/photos\/pets\/59243302\/1\/?bust=1671760532\u0026width=600",
+      "full": "https:\/\/dl5zpyw5k3jeb.cloudfront.net\/photos\/pets\/59243302\/1\/?bust=1671760532"
+    },
+    "videos": [],
+    "status": "adoptable",
+    "status_changed_at": "2022-12-23T01:55:35+0000",
+    "published_at": "2022-12-23T01:55:33+0000",
+    "distance": null,
+    "contact": {
+      "email": "sierrashaven@hotmail.com",
+      "phone": "(740) 353-5100",
+      "address": {
+        "address1": "80 Easter Drive",
+        "address2": null,
+        "city": "Portsmouth",
+        "state": "OH",
+        "postcode": "45662",
+        "country": "US"
+      }
+    },
+    "_links": {
+      "self": {
+        "href": "\/v2\/animals\/59243302"
+      },
+      "type": {
+        "href": "\/v2\/types\/dog"
+      },
+      "organization": {
+        "href": "\/v2\/organizations\/oh415"
+      }
+    }
+  }
+}
