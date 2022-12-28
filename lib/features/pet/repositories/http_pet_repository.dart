@@ -47,9 +47,6 @@ class HttpPetRepository implements PetRepository {
     final responseData = await httpService.get(
       '$path/$animalId',
       forceRefresh: forceRefresh,
-      queryParameters: <String, dynamic>{
-        'api_key': apiKey,
-      },
     );
 
     return Pet.fromJson(responseData['animal'] as Map<String, dynamic>);
