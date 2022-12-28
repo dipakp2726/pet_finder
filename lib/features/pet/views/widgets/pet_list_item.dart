@@ -64,7 +64,8 @@ class PetListItem extends ConsumerWidget {
                           width: MediaQuery.of(context).size.width,
                           height: 160,
                         ),
-                        AdoptedShadowWidget(petId: data.id!)
+                        AdoptedShadowWidget(petId: data.id!),
+                        AlreadyAdoptedMarker(petId: data.id!),
                       ],
                     ),
                   ),
@@ -142,6 +143,33 @@ class AdoptedShadowWidget extends ConsumerWidget {
             width: MediaQuery.of(context).size.width,
             height: 160,
             color: AppColors.black.withAlpha(150),
+          )
+        : const SizedBox.shrink();
+  }
+}
+
+class AlreadyAdoptedMarker extends ConsumerWidget {
+  const AlreadyAdoptedMarker({required this.petId, super.key});
+
+  final int petId;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final isAdopted = ref.watch(isPetAdpotedProvider(petId: petId));
+    return isAdopted
+        ? Positioned(
+            bottom: 0,
+            left: 0,
+            child: Container(
+              padding: const EdgeInsets.only(left: 4),
+              width: MediaQuery.of(context).size.width,
+              color: Colors.red.withAlpha(150),
+              alignment: Alignment.topLeft,
+              child: Text(
+                'Already Adopted',
+                style: Theme.of(context).textTheme.headline4,
+              ),
+            ),
           )
         : const SizedBox.shrink();
   }

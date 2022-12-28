@@ -3,6 +3,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:pet_heaven/core/configs/styles/app_colors.dart';
 import 'package:pet_heaven/features/pet/providers/adoption_provider.dart';
 
+import '../../../../core/widgets/animate_in_effect.dart';
+
 class AdoptMeButton extends ConsumerWidget {
   const AdoptMeButton({
     required this.petId,
@@ -35,7 +37,7 @@ class AdoptMeButton extends ConsumerWidget {
                   showSuccessDialog(context);
                 }
               : null,
-          child: const Text('Adopt Me'),
+          child: Text(isAdopted ? 'Already Adopted' : 'Adopt Me'),
         ),
       ),
     );
@@ -44,21 +46,23 @@ class AdoptMeButton extends ConsumerWidget {
   void showSuccessDialog(BuildContext context) {
     showDialog<void>(
       context: context,
-      builder: (context) => AlertDialog(
-        title: Text(
-          'Congratulations',
-          style: Theme.of(context).primaryTextTheme.headline2,
-        ),
-        content: Text(
-          'Pet adopted Successfully',
-          style: Theme.of(context).primaryTextTheme.headline4,
-        ),
-        actions: [
-          ElevatedButton(
-            child: const Text('OK'),
-            onPressed: () => Navigator.of(context).pop(),
+      builder: (context) => AnimateInEffect(
+        child: AlertDialog(
+          title: Text(
+            'Congratulations',
+            style: Theme.of(context).primaryTextTheme.headline2,
           ),
-        ],
+          content: Text(
+            'Pet adopted Successfully',
+            style: Theme.of(context).primaryTextTheme.headline4,
+          ),
+          actions: [
+            ElevatedButton(
+              child: const Text('OK'),
+              onPressed: () => Navigator.of(context).pop(),
+            ),
+          ],
+        ),
       ),
     );
   }

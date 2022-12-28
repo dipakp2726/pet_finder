@@ -9,6 +9,8 @@ import 'package:pet_heaven/features/pet/providers/pet_count_provider.dart';
 import 'package:pet_heaven/features/pet/providers/pet_list_provider.dart';
 import 'package:pet_heaven/features/pet/views/widgets/pet_list_item.dart';
 
+import 'animated_scroll_view_item.dart';
+
 /// Widget holding the list of pets
 class PetList extends ConsumerWidget {
   /// Creates new instance of [PetList]
@@ -30,11 +32,10 @@ class PetList extends ConsumerWidget {
           child: GridView.builder(
             itemCount: count,
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2,
-              childAspectRatio: .80,
-              crossAxisSpacing: 10,
-              mainAxisSpacing: 10
-            ),
+                crossAxisCount: 2,
+                childAspectRatio: .80,
+                crossAxisSpacing: 10,
+                mainAxisSpacing: 10),
             itemBuilder: (context, index) {
               final currentPet = ref
                   .watch(getPetListProvider(page: index ~/ 20))
@@ -44,7 +45,9 @@ class PetList extends ConsumerWidget {
                 overrides: [
                   currentPetProvider.overrideWithValue(currentPet),
                 ],
-                child: const PetListItem(),
+                child: const AnimatedScrollViewItem(
+                  child: PetListItem(),
+                ),
               );
             },
           ),

@@ -2,8 +2,10 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:pet_heaven/core/widgets/animate_in_effect.dart';
 import 'package:pet_heaven/core/widgets/app_loader.dart';
 import 'package:pet_heaven/core/widgets/error_view.dart';
+import 'package:pet_heaven/core/widgets/fade_in_effect.dart';
 import 'package:pet_heaven/features/pet/providers/pet_details_provider.dart';
 import 'package:pet_heaven/features/pet/views/widgets/pet_bio.dart';
 import 'package:pet_heaven/features/pet/views/widgets/pet_details_sliver_app_bar.dart';
@@ -53,8 +55,12 @@ class PetDetailsPage extends ConsumerWidget {
                     data: (pet) {
                       return Column(
                         children: [
-                          PetInfo(pet),
-                          PetImagesList(pet.photos ?? []),
+                          AnimateInEffect(
+                            child: PetInfo(pet),
+                          ),
+                          FadeInEffect(
+                            child: PetImagesList(pet.photos ?? []),
+                          ),
                           // PetImages(petId),
                           PetBio(pet.description),
                           SizedBox(
@@ -74,8 +80,10 @@ class PetDetailsPage extends ConsumerWidget {
               ),
             ],
           ),
-          AdoptMeButton(
-            petId: petId,
+          AnimateInEffect(
+            child: AdoptMeButton(
+              petId: petId,
+            ),
           )
         ],
       ),
