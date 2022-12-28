@@ -9,7 +9,7 @@ import 'package:pet_heaven/features/pet/providers/pet_count_provider.dart';
 import 'package:pet_heaven/features/pet/providers/pet_list_provider.dart';
 import 'package:pet_heaven/features/pet/views/widgets/pet_list_item.dart';
 
-import 'animated_scroll_view_item.dart';
+import '../../../../core/widgets/animated_scroll_view_item.dart';
 
 /// Widget holding the list of pets
 class PetList extends ConsumerWidget {
