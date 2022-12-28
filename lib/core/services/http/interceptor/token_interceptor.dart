@@ -1,13 +1,53 @@
-import 'package:dio/dio.dart';
+import 'dart:developer';
 
-const token =
-    'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJEVmlHOG14Tk43bHdrUlZ6eE1JM3g1RW9UdW1IQzlWT0VsMFJTYkJITEFxWTF0SXdIYSIsImp0aSI6IjhkYjc0MTM4MGE2Njg5YTg0NDI2MjY4MDY5NDExMTkwNzgxMWY3YTEwZjVmZGYwYzczOGZlMDM1YzZjZjQyMzg0M2Q0MzRmMzk4NGM5YjQwIiwiaWF0IjoxNjcyMTk4OTgyLCJuYmYiOjE2NzIxOTg5ODIsImV4cCI6MTY3MjIwMjU4Miwic3ViIjoiIiwic2NvcGVzIjpbXX0.t4uqzONufFI-3kLWz_IneqVODskAFUsorUjoTS8ggbea4-vAJ6blCwO-NzNuWxENVWip9brbB65pdLfB5VK9IsTHc4S36prPftLtseaa75o2ZYXQkeP5ufchS49IMDP0a5O8mor2N2jKXzA8z7e42UCx0ilwnlzhrvnnglIux_PWkQbASLSNpcMnRaEa2_9Zlq0PQN4cn8Tx_N48fV0_BapUkl-Fy_yMfCkHNyY51tEcyrAuvEf9Nhil6uRpZk7cdV0QR3KNpCFxcBDxdaEJ74_zeN7ztkd-ufx1gCsSfDV9EZu4YEH0EdS-FbPof0ScKqTlYjpWGdZBAmJtNAgYEQ';
+import 'package:dio/dio.dart';
+import 'package:meta/meta.dart';
+import 'package:pet_heaven/core/configs/configs.dart';
+import 'package:pet_heaven/core/services/storage/storage_service.dart';
 
 class TokenInterceptor extends Interceptor {
+  TokenInterceptor(this.storageService);
+
+  @visibleForTesting
+  final String tokenKey = 'token_key';
+
+  final StorageService storageService;
+
   @override
   void onRequest(RequestOptions options, RequestInterceptorHandler handler) {
+    final token = storageService.get(tokenKey);
+
     options.headers['Authorization'] = 'Bearer $token';
 
     return handler.next(options);
   }
+
+  @override
+  Future<void> onError(DioError err, ErrorInterceptorHandler handler) async {
+    if (err.response?.statusCode == 401) {
+      log('❌ ❌ ❌ Auth token expired');
+
+      final token = await _refreshToken();
+
+      await storageService.set(tokenKey, token);
+
+      return handler.resolve(await Dio().fetch(err.requestOptions));
+    }
+
+    super.onError(err, handler);
+  }
+}
+
+Future<String> _refreshToken() async {
+  const oauthPath = '${Configs.apiBaseUrl}/oauth2/token';
+  final data = {
+    'grant_type': 'client_credentials',
+    'client_id': Configs.clientId,
+    'client_secret': Configs.clientSecret
+  };
+
+  final res = await Dio().post<Map<String, dynamic>>(oauthPath, data: data);
+
+  final token = res.data!['access_token'] as String;
+  return token;
 }

@@ -15,7 +15,7 @@ class DioHttpService implements HttpService {
     Dio? dioOverride,
   }) {
     dio = dioOverride ?? Dio(baseOptions);
-    dio.interceptors.add(TokenInterceptor());
+    dio.interceptors.add(TokenInterceptor(storageService));
   }
 
   /// Storage service used for caching http responses
