@@ -26,7 +26,7 @@ class GridShimmer extends StatelessWidget {
       child: GridView.count(
         physics: const NeverScrollableScrollPhysics(),
         padding: const EdgeInsets.symmetric(horizontal: 17, vertical: 10),
-        crossAxisCount: 3,
+        crossAxisCount: 2,
         mainAxisSpacing: 10,
         crossAxisSpacing: 10,
         children: List.generate(

@@ -21,14 +21,19 @@ class HttpPetRepository implements PetRepository {
   @override
   Future<PetList> getAnimalList({
     int page = 1,
+    String? name,
     bool forceRefresh = false,
   }) async {
+    final queryParameters = <String, dynamic>{};
+    if (name != null) {
+      queryParameters['name'] = '$name';
+    }
+    queryParameters['page'] = page;
+
     final responseData = await httpService.get(
       path,
       forceRefresh: forceRefresh,
-      queryParameters: <String, dynamic>{
-        'page': page,
-      },
+      queryParameters: queryParameters,
     );
 
     return PetList.fromJson(responseData);

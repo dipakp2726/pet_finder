@@ -35,6 +35,7 @@ abstract class PetRepository {
   /// Request to get a list of pets endpoint
   Future<PetList> getAnimalList({
     int page = 1,
+    String? name,
     bool forceRefresh = false,
   });
 }

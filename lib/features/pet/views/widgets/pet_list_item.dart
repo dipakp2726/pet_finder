@@ -49,7 +49,10 @@ class PetListItem extends ConsumerWidget {
                   tag: 'pet_${data.id}_profile_picture',
                   child: ClipRRect(
                     borderRadius: const BorderRadius.only(
-                        bottomRight: Radius.circular(50)),
+                      topLeft: Radius.circular(12),
+                      topRight: Radius.circular(12),
+                      bottomRight: Radius.circular(50),
+                    ),
                     child: AppCachedNetworkImage(
                       imageUrl: data.photos!.isNotEmpty
                           ? data.photos!.first.large!
@@ -61,7 +64,8 @@ class PetListItem extends ConsumerWidget {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.all(8),
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 12, horizontal: 8),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -73,13 +77,30 @@ class PetListItem extends ConsumerWidget {
                             ),
                       ),
                       const SizedBox(
-                        height: 4,
+                        height: 8,
                       ),
-                      Text(
-                        data.contact?.address?.city ?? ' city',
-                        style: Theme.of(context).textTheme.bodyText2!.copyWith(
-                              color: AppColors.black,
-                            ),
+                      Row(
+                        children: [
+                          const Icon(
+                            Icons.location_on_rounded,
+                            color: AppColors.primary,
+                            size: 18,
+                          ),
+                          Text(
+                            data.contact?.address?.city ?? ' city',
+                            style:
+                                Theme.of(context).textTheme.bodyText2!.copyWith(
+                                      color: AppColors.black,
+                                    ),
+                          ),
+                          Text(
+                            '-${data.contact?.address?.state ?? ' State'}',
+                            style:
+                                Theme.of(context).textTheme.bodyText2!.copyWith(
+                                      color: AppColors.black,
+                                    ),
+                          ),
+                        ],
                       ),
                     ],
                   ),
