@@ -3,6 +3,7 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:pet_heaven/core/configs/styles/app_colors.dart';
+import 'package:pet_heaven/core/configs/styles/ui_constants.dart';
 import 'package:pet_heaven/core/widgets/app_cached_network_image.dart';
 import 'package:pet_heaven/core/widgets/error_view.dart';
 import 'package:pet_heaven/core/widgets/list_item_shimmer.dart';
@@ -30,7 +31,7 @@ class PetListItem extends ConsumerWidget {
                   petId: data.id!,
                   petAvatar: data.photos!.isNotEmpty
                       ? data.photos!.first.large!
-                      : _image,
+                      : UIConstants.petPlaceHolderImageUrl,
                   petName: data.name!,
                 ),
               ),
@@ -60,7 +61,7 @@ class PetListItem extends ConsumerWidget {
                         AppCachedNetworkImage(
                           imageUrl: data.photos!.isNotEmpty
                               ? data.photos!.first.large!
-                              : _image,
+                              : UIConstants.petPlaceHolderImageUrl,
                           fit: BoxFit.cover,
                           width: MediaQuery.of(context).size.width,
                           height: 160,
@@ -132,9 +133,6 @@ class PetListItem extends ConsumerWidget {
     );
   }
 }
-
-const _image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:'
-    'ANd9GcRm7Bn3VJPwzwkwpoSyOnZWyYb4SIG-nMFJFg&usqp=CAU';
 
 class AdoptedShadowWidget extends ConsumerWidget {
   const AdoptedShadowWidget({required this.petId, super.key});
