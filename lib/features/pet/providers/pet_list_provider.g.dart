@@ -29,7 +29,7 @@ class _SystemHash {
   }
 }
 
-String _$getPetListHash() => r'd23273d4b80cd3ac3782f6a314d585c63500ced5';
+String _$getPetListHash() => r'1ff46e97997b4e6cd9a5b3b8e3c286900196c373';
 
 /// See also [getPetList].
 class GetPetListProvider extends AutoDisposeFutureProvider<PetList> {
