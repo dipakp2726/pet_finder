@@ -2,6 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:pet_heaven/core/configs/configs.dart';
 import 'package:pet_heaven/core/exceptions/http_exception.dart';
 import 'package:pet_heaven/core/services/http/http_service.dart';
+import 'package:pet_heaven/core/services/http/interceptor/token_interceptor.dart';
 import 'package:pet_heaven/core/services/storage/storage_service.dart';
 
 /// Http service implementation using the Dio package
@@ -14,6 +15,7 @@ class DioHttpService implements HttpService {
     Dio? dioOverride,
   }) {
     dio = dioOverride ?? Dio(baseOptions);
+    dio.interceptors.add(TokenInterceptor());
   }
 
   /// Storage service used for caching http responses

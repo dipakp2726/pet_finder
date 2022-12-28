@@ -1,0 +1,13 @@
+import 'package:dio/dio.dart';
+
+const token =
+    'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJEVmlHOG14Tk43bHdrUlZ6eE1JM3g1RW9UdW1IQzlWT0VsMFJTYkJITEFxWTF0SXdIYSIsImp0aSI6IjhkYjc0MTM4MGE2Njg5YTg0NDI2MjY4MDY5NDExMTkwNzgxMWY3YTEwZjVmZGYwYzczOGZlMDM1YzZjZjQyMzg0M2Q0MzRmMzk4NGM5YjQwIiwiaWF0IjoxNjcyMTk4OTgyLCJuYmYiOjE2NzIxOTg5ODIsImV4cCI6MTY3MjIwMjU4Miwic3ViIjoiIiwic2NvcGVzIjpbXX0.t4uqzONufFI-3kLWz_IneqVODskAFUsorUjoTS8ggbea4-vAJ6blCwO-NzNuWxENVWip9brbB65pdLfB5VK9IsTHc4S36prPftLtseaa75o2ZYXQkeP5ufchS49IMDP0a5O8mor2N2jKXzA8z7e42UCx0ilwnlzhrvnnglIux_PWkQbASLSNpcMnRaEa2_9Zlq0PQN4cn8Tx_N48fV0_BapUkl-Fy_yMfCkHNyY51tEcyrAuvEf9Nhil6uRpZk7cdV0QR3KNpCFxcBDxdaEJ74_zeN7ztkd-ufx1gCsSfDV9EZu4YEH0EdS-FbPof0ScKqTlYjpWGdZBAmJtNAgYEQ';
+
+class TokenInterceptor extends Interceptor {
+  @override
+  void onRequest(RequestOptions options, RequestInterceptorHandler handler) {
+    options.headers['Authorization'] = 'Bearer $token';
+
+    return handler.next(options);
+  }
+}
