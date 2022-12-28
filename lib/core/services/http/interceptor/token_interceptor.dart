@@ -27,7 +27,7 @@ class TokenInterceptor extends Interceptor {
     if (err.response?.statusCode == 401) {
       log('❌ ❌ ❌ Auth token expired');
 
-      final token = await _refreshToken();
+      final token = await refreshToken();
 
       await storageService.set(tokenKey, token);
 
@@ -39,8 +39,8 @@ class TokenInterceptor extends Interceptor {
     super.onError(err, handler);
   }
 }
-
-Future<String> _refreshToken() async {
+@visibleForTesting
+Future<String> refreshToken() async {
   const oauthPath = '${Configs.apiBaseUrl}/oauth2/token';
   final data = {
     'grant_type': 'client_credentials',
