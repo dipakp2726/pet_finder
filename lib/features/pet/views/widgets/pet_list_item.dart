@@ -100,15 +100,19 @@ class PetListItem extends ConsumerWidget {
                             color: AppColors.primary,
                             size: 18,
                           ),
-                          Text(
-                            data.contact?.address?.city ?? ' city',
-                            style:
-                                Theme.of(context).textTheme.bodyText2!.copyWith(
-                                      color: AppColors.black,
-                                    ),
+                          Flexible(
+                            child: Text(
+                              data.contact?.address?.city ?? ' city',
+                              overflow: TextOverflow.ellipsis,
+                              style:
+                                  Theme.of(context).textTheme.bodyText2!.copyWith(
+                                        color: AppColors.black,
+                                      ),
+                            ),
                           ),
                           Text(
                             '-${data.contact?.address?.state ?? ' State'}',
+                            overflow: TextOverflow.ellipsis,
                             style:
                                 Theme.of(context).textTheme.bodyText2!.copyWith(
                                       color: AppColors.black,
