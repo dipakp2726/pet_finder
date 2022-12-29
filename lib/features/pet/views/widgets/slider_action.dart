@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../core/configs/styles/app_colors.dart';
+import 'package:pet_heaven/core/configs/styles/app_colors.dart';
 
 /// Slider action widget like next, prev,
 class SliderAction extends StatelessWidget {

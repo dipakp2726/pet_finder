@@ -90,7 +90,7 @@ class PetListItem extends ConsumerWidget {
                             ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 4.0),
+                        padding: const EdgeInsets.symmetric(vertical: 4),
                         child: Text(
                           data.name!.getPrice(),
                           overflow: TextOverflow.ellipsis,

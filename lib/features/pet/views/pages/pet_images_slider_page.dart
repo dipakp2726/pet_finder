@@ -52,8 +52,8 @@ class PetImagesSliderPageState extends State<PetImagesSliderPage> {
                   child: widget.images[index].large == null
                       ? Container()
                       : InteractiveViewer(
-                        child: Center(
-                          child: AppCachedNetworkImage(
+                          child: Center(
+                            child: AppCachedNetworkImage(
                               key: ValueKey(
                                 '__pet_image_slider_${index}__',
                               ),
@@ -62,8 +62,8 @@ class PetImagesSliderPageState extends State<PetImagesSliderPage> {
                               isLoaderShimmer: false,
                               alignment: Alignment.topCenter,
                             ),
+                          ),
                         ),
-                      ),
                 );
               },
             ),

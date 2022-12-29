@@ -39,6 +39,7 @@ class TokenInterceptor extends Interceptor {
     super.onError(err, handler);
   }
 }
+
 @visibleForTesting
 Future<String> refreshToken() async {
   const oauthPath = '${Configs.apiBaseUrl}/oauth2/token';

@@ -1,13 +1,13 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import 'attributes.dart';
-import 'breeds.dart';
-import 'colors.dart';
-import 'contact.dart';
-import 'environment.dart';
-import 'links.dart';
-import 'photo.dart';
-import 'video.dart';
+import 'package:pet_heaven/features/pet/model/attributes.dart';
+import 'package:pet_heaven/features/pet/model/breeds.dart';
+import 'package:pet_heaven/features/pet/model/colors.dart';
+import 'package:pet_heaven/features/pet/model/contact.dart';
+import 'package:pet_heaven/features/pet/model/environment.dart';
+import 'package:pet_heaven/features/pet/model/links.dart';
+import 'package:pet_heaven/features/pet/model/photo.dart';
+import 'package:pet_heaven/features/pet/model/video.dart';
 
 part 'pet.freezed.dart';
 

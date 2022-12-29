@@ -1,6 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import 'address.dart';
+import 'package:pet_heaven/features/pet/model/address.dart';
 
 part 'contact.freezed.dart';
 part 'contact.g.dart';

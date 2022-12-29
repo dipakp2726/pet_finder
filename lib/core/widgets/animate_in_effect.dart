@@ -32,7 +32,7 @@ class _AnimateInEffectState extends State<AnimateInEffect>
 
     Future.delayed(
       const Duration(milliseconds: 300),
-          animationController.forward,
+      animationController.forward,
     );
 
     final Curve intervalCurve = Interval(

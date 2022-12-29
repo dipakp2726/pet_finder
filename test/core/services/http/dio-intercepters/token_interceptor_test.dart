@@ -27,8 +27,5 @@ void main() {
       // Assert
       expect(requestOptions.headers['Authorization'], 'Bearer 12345');
     });
-
-
-
   });
 }

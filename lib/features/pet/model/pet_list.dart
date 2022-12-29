@@ -1,7 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-
-import 'pet.dart';
-import 'pagination.dart';
+import 'package:pet_heaven/features/pet/model/pagination.dart';
+import 'package:pet_heaven/features/pet/model/pet.dart';
 
 part 'pet_list.freezed.dart';
 part 'pet_list.g.dart';
@@ -13,5 +12,6 @@ class PetList with _$PetList {
     Pagination? pagination,
   }) = _Model;
 
-  factory PetList.fromJson(Map<String, dynamic> json) => _$PetListFromJson(json);
+  factory PetList.fromJson(Map<String, dynamic> json) =>
+      _$PetListFromJson(json);
 }

@@ -3,10 +3,8 @@ import 'dart:developer';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:pet_heaven/core/widgets/app_loader.dart';
+import 'package:pet_heaven/core/widgets/error_view.dart';
 import 'package:pet_heaven/core/widgets/shimmer.dart';
-
-import 'error_view.dart';
-
 
 /// Wrapper widget around a [CachedNetworkImage]
 ///

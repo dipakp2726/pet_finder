@@ -2,14 +2,13 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:pet_heaven/core/widgets/animated_scroll_view_item.dart';
 import 'package:pet_heaven/core/widgets/error_view.dart';
 import 'package:pet_heaven/core/widgets/grid_shimmer.dart';
 import 'package:pet_heaven/features/pet/providers/current_pet_provider.dart';
 import 'package:pet_heaven/features/pet/providers/pet_count_provider.dart';
 import 'package:pet_heaven/features/pet/providers/pet_list_provider.dart';
 import 'package:pet_heaven/features/pet/views/widgets/pet_list_item.dart';
-
-import '../../../../core/widgets/animated_scroll_view_item.dart';
 
 /// Widget holding the list of pets
 class PetList extends ConsumerWidget {

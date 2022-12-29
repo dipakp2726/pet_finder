@@ -1,6 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import 'links.dart';
+import 'package:pet_heaven/features/pet/model/links.dart';
 
 part 'pagination.freezed.dart';
 part 'pagination.g.dart';

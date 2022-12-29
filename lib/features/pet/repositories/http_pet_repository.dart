@@ -26,7 +26,7 @@ class HttpPetRepository implements PetRepository {
   }) async {
     final queryParameters = <String, dynamic>{};
     if (name != null) {
-      queryParameters['name'] = '$name';
+      queryParameters['name'] = name;
     }
     queryParameters['page'] = page;
 

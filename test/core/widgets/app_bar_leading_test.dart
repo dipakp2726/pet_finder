@@ -25,7 +25,6 @@ void main() {
     verify(() => mockNavigatorObserver.didPop(any(), any()));
   });
 
-
   // TODO: add golden
 /*  testWidgets('matches expected widget', (WidgetTester tester) async {
     await GoldenTestUtils.loadMaterialIconsFont();

@@ -28,7 +28,7 @@ void main() {
     container.read(petNameProvider.notifier).state = 'fluffy';
 
     // The listener was called again, but with 1 this time
-    verify(()=>listener('', 'fluffy')).called(1);
+    verify(() => listener('', 'fluffy')).called(1);
     verifyNoMoreInteractions(listener);
   });
 }

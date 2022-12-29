@@ -5,7 +5,6 @@ import 'package:pet_heaven/core/exceptions/http_exception.dart';
 import 'package:pet_heaven/core/services/http/dio_http_service.dart';
 import 'package:pet_heaven/core/services/storage/storage_service.dart';
 
-
 import '../../../test-utils/mocks.dart';
 
 void main() {

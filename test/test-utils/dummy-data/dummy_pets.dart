@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_single_quotes
+// ignore_for_file: prefer_single_quotes, unnecessary_string_escapes, inference_failure_on_collection_literal, lines_longer_than_80_chars
 
 import 'package:pet_heaven/features/pet/model/pet.dart';
 import 'package:pet_heaven/features/pet/model/pet_list.dart';

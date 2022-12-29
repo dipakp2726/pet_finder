@@ -3,9 +3,9 @@ import 'package:pet_heaven/core/widgets/app_cached_network_image.dart';
 
 class PetAvatar extends StatelessWidget {
   const PetAvatar(
-      this.avatarUrl, {
-        super.key,
-      });
+    this.avatarUrl, {
+    super.key,
+  });
 
   final String? avatarUrl;
 
@@ -15,14 +15,14 @@ class PetAvatar extends StatelessWidget {
       borderRadius: BorderRadius.circular(10),
       child: avatarUrl == null
           ? Image.asset(
-        'assets/images/placeholder.png',
-        fit: BoxFit.cover,
-        height: 90,
-      )
+              'assets/images/placeholder.png',
+              fit: BoxFit.cover,
+              height: 90,
+            )
           : AppCachedNetworkImage(
-        imageUrl: avatarUrl!,
-        height: 90,
-      ),
+              imageUrl: avatarUrl!,
+              height: 90,
+            ),
     );
   }
 }

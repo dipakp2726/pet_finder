@@ -1,8 +1,8 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import 'organization.dart';
-import 'self.dart';
-import 'type.dart';
+import 'package:pet_heaven/features/pet/model/organization.dart';
+import 'package:pet_heaven/features/pet/model/self.dart';
+import 'package:pet_heaven/features/pet/model/type.dart';
 
 part 'links.freezed.dart';
 part 'links.g.dart';

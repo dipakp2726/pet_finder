@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pet_heaven/features/pet/views/widgets/pet_list.dart';
 
-import '../widgets/pet_search_bar.dart';
+import 'package:pet_heaven/features/pet/views/widgets/pet_search_bar.dart';
 
 /// Widget for the pet list page
 class PetListPage extends StatelessWidget {
@@ -22,7 +22,7 @@ class PetListPage extends StatelessWidget {
         ],
       ),
       body: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.all(8),
         child: Column(
           children: const [
             PetSearchBar(),

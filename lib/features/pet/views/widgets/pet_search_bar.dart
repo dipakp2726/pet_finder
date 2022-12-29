@@ -3,7 +3,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:pet_heaven/core/configs/styles/app_colors.dart';
 import 'package:pet_heaven/features/pet/providers/pet_name_provider.dart';
 
-
 class PetSearchBar extends ConsumerWidget {
   const PetSearchBar({super.key});
 
