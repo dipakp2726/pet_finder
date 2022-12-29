@@ -10,7 +10,6 @@ import 'package:pet_heaven/features/pet/providers/pet_details_provider.dart';
 import 'package:pet_heaven/features/pet/views/pages/pet_details_page.dart';
 import 'package:pet_heaven/features/pet/views/widgets/pet_avatar.dart';
 
-
 /// Page widget of the Adopted Pet list
 ///
 class HistoryPage extends StatelessWidget {
@@ -27,7 +26,6 @@ class HistoryPage extends StatelessWidget {
   }
 }
 
-
 /// Widget holding the adopted pet list
 ///
 /// currently shows only five records due to api rate limit on petfinder
@@ -38,23 +36,31 @@ class HistoryList extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final adoptedIds = ref.watch(adoptMeProvider);
 
-    final reversedList = adoptedIds.reversed.toList();
+    print('rebuild');
 
     if (adoptedIds.isNotEmpty) {
-      return ListView.builder(
-        itemCount: min(5, adoptedIds.length),
-        itemBuilder: (context, index) {
-          final currentPet = ref.watch(petDetailsProvider(reversedList[index]));
+      final reversedList = adoptedIds.reversed.toList();
+      return RefreshIndicator(
+        onRefresh: (){
+          ref.invalidate(adoptMeProvider);
 
-          return ProviderScope(
-            overrides: [
-              currentPetProvider.overrideWithValue(currentPet),
-            ],
-            child: const AnimatedScrollViewItem(
-              child: HistoryListItem(),
-            ),
-          );
+          return Future.value();
         },
+        child: ListView.builder(
+          itemCount: min(5, adoptedIds.length),
+          itemBuilder: (context, index) {
+            final currentPet = ref.watch(petDetailsProvider(reversedList[index]));
+
+            return ProviderScope(
+              overrides: [
+                currentPetProvider.overrideWithValue(currentPet),
+              ],
+              child: const AnimatedScrollViewItem(
+                child: HistoryListItem(),
+              ),
+            );
+          },
+        ),
       );
     } else {
       return const Center(

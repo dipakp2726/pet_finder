@@ -63,7 +63,7 @@ class PetDetailsPage extends ConsumerWidget {
                           // PetImages(petId),
                           PetBio(pet.description),
                           SizedBox(
-                            height: 30 + MediaQuery.of(context).padding.bottom,
+                            height: 60 + MediaQuery.of(context).padding.bottom,
                           ),
                         ],
                       );

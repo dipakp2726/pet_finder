@@ -12,19 +12,17 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   int _selectedIndex = 0;
 
-  final widgetOptions = [
-    const PetListPage(
-      key: PageStorageKey('petList'),
-    ),
-    const HistoryPage(),
-  ];
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: IndexedStack(
         index: _selectedIndex,
-        children: widgetOptions,
+        children:  [
+          const PetListPage(
+            key: PageStorageKey('petList'),
+          ),
+          HistoryPage(key: UniqueKey(),),
+        ],
       ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _selectedIndex,
