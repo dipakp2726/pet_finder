@@ -1,20 +1,25 @@
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
-
-import 'package:pet_heaven/features/pet/views/pages/pets_list_page.dart';
+import 'package:pet_heaven/core/services/storage/storage_service_provider.dart';
+import 'package:pet_heaven/features/pet/views/pages/home_page.dart';
 import 'package:pet_heaven/pet_app.dart';
+
+import 'test-utils/mocks.dart';
+import 'test-utils/pump_app.dart';
 
 void main() {
   testWidgets(
-    'renders PetListPage widget ',
+    'renders Homepage widget ',
     (WidgetTester tester) async {
-      await tester.pumpWidget(
-        const ProviderScope(child: PetsApp()),
+      await tester.pumpProviderApp(
+        const PetsApp(),
+        overrides: [
+          storageServiceProvider.overrideWithValue(MockStorageService()),
+        ],
       );
 
       await tester.pumpAndSettle();
 
-      expect(find.byType(PetListPage), findsOneWidget);
+      expect(find.byType(HomePage), findsOneWidget);
     },
   );
 }
