@@ -21,10 +21,6 @@ abstract class PetRepository {
   /// See: https://api.petfinder.com/v2/animals
   String get path;
 
-  /// API Key used to authenticate petfinder requests
-  ///
-  /// See: https://www.petfinder.com/developers/v2/docs/
-  String get apiKey;
 
   /// Request to get a Animal details endpoint
   Future<Pet> getAnimalDetails(

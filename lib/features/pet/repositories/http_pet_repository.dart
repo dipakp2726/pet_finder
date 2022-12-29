@@ -1,4 +1,3 @@
-import 'package:pet_heaven/core/configs/configs.dart';
 import 'package:pet_heaven/core/services/http/http_service.dart';
 import 'package:pet_heaven/features/pet/model/pet.dart';
 import 'package:pet_heaven/features/pet/model/pet_list.dart';
@@ -15,8 +14,6 @@ class HttpPetRepository implements PetRepository {
   @override
   String get path => '/animals';
 
-  @override
-  String get apiKey => Configs.petAPIKey;
 
   @override
   Future<PetList> getAnimalList({
