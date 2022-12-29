@@ -5,6 +5,7 @@ import 'package:pet_heaven/core/configs/styles/app_colors.dart';
 import 'package:pet_heaven/core/widgets/animate_in_effect.dart';
 import 'package:pet_heaven/features/pet/providers/adoption_provider.dart';
 
+/// Button widget that allows adopting pet
 class AdoptMeButton extends ConsumerStatefulWidget {
   const AdoptMeButton({
     super.key,
@@ -76,7 +77,6 @@ class _AdoptState extends ConsumerState<AdoptMeButton> {
             confettiController: _controllerCenter,
             numberOfParticles: 200,
             blastDirectionality: BlastDirectionality.explosive,
-
             shouldLoop: false,
             colors: const [
               Colors.green,
@@ -84,8 +84,7 @@ class _AdoptState extends ConsumerState<AdoptMeButton> {
               Colors.pink,
               Colors.orange,
               Colors.purple
-            ], // manually specify the colors to be used
-            // createParticlePath: drawStar, // define a custom shape/path.
+            ],
           ),
         ),
       ],

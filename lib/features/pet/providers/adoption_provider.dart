@@ -3,7 +3,7 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'adoption_provider.g.dart';
 
-/// Provider that allows adopting pets
+/// Provider that stores adopted pets
 @riverpod
 class AdoptMe extends _$AdoptMe {
   final String adoptKey = 'adopt_key';
@@ -28,11 +28,14 @@ class AdoptMe extends _$AdoptMe {
   }
 }
 
+
+/// provider that allows adopting pet
 @riverpod
 void adoptPet(AdoptPetRef ref, {required int petId}) {
   return ref.watch(adoptMeProvider.notifier).adopt(petId);
 }
 
+/// provider to check whether given pet is adopted or not
 @riverpod
 bool isPetAdpoted(IsPetAdpotedRef ref, {required int petId}) {
   return ref.watch(adoptMeProvider).contains(petId);

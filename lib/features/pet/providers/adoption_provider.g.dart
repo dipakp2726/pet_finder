@@ -29,9 +29,9 @@ class _SystemHash {
   }
 }
 
-String _$AdoptMeHash() => r'9ae04ae81406da5e7df9a08e22c507d3a2071db7';
+String _$AdoptMeHash() => r'71405bf329aa23d375e902da5aa0a7cb87c6da63';
 
-/// Provider that allows adopting pets
+/// Provider that stores adopted pets
 ///
 /// Copied from [AdoptMe].
 final adoptMeProvider = AutoDisposeNotifierProvider<AdoptMe, List<int>>(
@@ -47,9 +47,11 @@ abstract class _$AdoptMe extends AutoDisposeNotifier<List<int>> {
   List<int> build();
 }
 
-String _$adoptPetHash() => r'5c716a242a39308f923b68004e0c4c8fa7fa97c4';
+String _$adoptPetHash() => r'ea31f3dc883708e8ab2cc1b6defd92b8ae3e566e';
 
-/// See also [adoptPet].
+/// provider that allows adopting pet
+///
+/// Copied from [adoptPet].
 class AdoptPetProvider extends AutoDisposeProvider<void> {
   AdoptPetProvider({
     required this.petId,
@@ -84,7 +86,9 @@ class AdoptPetProvider extends AutoDisposeProvider<void> {
 
 typedef AdoptPetRef = AutoDisposeProviderRef<void>;
 
-/// See also [adoptPet].
+/// provider that allows adopting pet
+///
+/// Copied from [adoptPet].
 final adoptPetProvider = AdoptPetFamily();
 
 class AdoptPetFamily extends Family<void> {
@@ -119,7 +123,9 @@ class AdoptPetFamily extends Family<void> {
 
 String _$isPetAdpotedHash() => r'1414116cd3eca18d0ab9346ed1a8f2c9d2c537e5';
 
-/// See also [isPetAdpoted].
+/// provider to check whether given pet is adopted or not
+///
+/// Copied from [isPetAdpoted].
 class IsPetAdpotedProvider extends AutoDisposeProvider<bool> {
   IsPetAdpotedProvider({
     required this.petId,
@@ -154,7 +160,9 @@ class IsPetAdpotedProvider extends AutoDisposeProvider<bool> {
 
 typedef IsPetAdpotedRef = AutoDisposeProviderRef<bool>;
 
-/// See also [isPetAdpoted].
+/// provider to check whether given pet is adopted or not
+///
+/// Copied from [isPetAdpoted].
 final isPetAdpotedProvider = IsPetAdpotedFamily();
 
 class IsPetAdpotedFamily extends Family<bool> {

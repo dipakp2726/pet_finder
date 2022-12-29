@@ -31,7 +31,9 @@ class _SystemHash {
 
 String _$getPetListHash() => r'1ff46e97997b4e6cd9a5b3b8e3c286900196c373';
 
-/// See also [getPetList].
+/// provider that fetches paginated pet list
+///
+/// Copied from [getPetList].
 class GetPetListProvider extends AutoDisposeFutureProvider<PetList> {
   GetPetListProvider({
     required this.page,
@@ -66,7 +68,9 @@ class GetPetListProvider extends AutoDisposeFutureProvider<PetList> {
 
 typedef GetPetListRef = AutoDisposeFutureProviderRef<PetList>;
 
-/// See also [getPetList].
+/// provider that fetches paginated pet list
+///
+/// Copied from [getPetList].
 final getPetListProvider = GetPetListFamily();
 
 class GetPetListFamily extends Family<AsyncValue<PetList>> {

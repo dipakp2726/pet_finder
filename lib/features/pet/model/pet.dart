@@ -46,7 +46,8 @@ class Pet with _$Pet {
 extension Price on String {
   /// generate price based on name chars
   String getPrice() {
-    // Convert the name to a number by summing up the ASCII values of its characters
+    // Convert the name to a number by summing up the ASCII
+    // values of its characters
     final nameValue = codeUnits.reduce((value, unit) => value + unit);
     // Generate a number between 100 and 1000
     final number = nameValue.remainder(901) + 100;

@@ -14,7 +14,6 @@ class HttpPetRepository implements PetRepository {
   @override
   String get path => '/animals';
 
-
   @override
   Future<PetList> getAnimalList({
     int page = 1,

@@ -10,6 +10,9 @@ import 'package:pet_heaven/features/pet/providers/pet_details_provider.dart';
 import 'package:pet_heaven/features/pet/views/pages/pet_details_page.dart';
 import 'package:pet_heaven/features/pet/views/widgets/pet_avatar.dart';
 
+
+/// Page widget of the Adopted Pet list
+///
 class HistoryPage extends StatelessWidget {
   const HistoryPage({super.key});
 
@@ -24,6 +27,10 @@ class HistoryPage extends StatelessWidget {
   }
 }
 
+
+/// Widget holding the adopted pet list
+///
+/// currently shows only five records due to api rate limit on petfinder
 class HistoryList extends ConsumerWidget {
   const HistoryList({super.key});
 
@@ -57,6 +64,7 @@ class HistoryList extends ConsumerWidget {
   }
 }
 
+/// Widget holding a list item in the adopted Pet list
 class HistoryListItem extends ConsumerWidget {
   const HistoryListItem({super.key});
 

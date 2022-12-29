@@ -22,7 +22,7 @@ abstract class PetRepository {
   String get path;
 
 
-  /// Request to get a Animal details endpoint
+  /// Request to get a pet details endpoint
   Future<Pet> getAnimalDetails(
     int animalId, {
     bool forceRefresh = false,

@@ -5,6 +5,11 @@ import 'package:meta/meta.dart';
 import 'package:pet_heaven/core/configs/configs.dart';
 import 'package:pet_heaven/core/services/storage/storage_service.dart';
 
+
+
+/// Provides auth token for request at petfinder
+/// for token
+/// See: https://www.petfinder.com/developers/v2/docs/
 class TokenInterceptor extends Interceptor {
   TokenInterceptor(this.storageService);
 
@@ -40,6 +45,8 @@ class TokenInterceptor extends Interceptor {
   }
 }
 
+
+/// get access token from petfinder
 @visibleForTesting
 Future<String> refreshToken() async {
   const oauthPath = '${Configs.apiBaseUrl}/oauth2/token';

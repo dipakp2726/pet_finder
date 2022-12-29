@@ -6,6 +6,8 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'pet_list_provider.g.dart';
 
+
+/// provider that fetches paginated pet list
 @riverpod
 Future<PetList> getPetList(GetPetListRef ref, {required int page}) {
   final petRepository = ref.watch(petRepositoryProvider);

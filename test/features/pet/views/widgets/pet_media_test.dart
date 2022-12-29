@@ -22,8 +22,11 @@ void main() {
   testWidgets(
     'renders list of pet images without images when not available',
     (WidgetTester tester) async {
-      await tester
-          .pumpApp(Material(child: PetImagesList(DummyPets.pet1.copyWith(photos: []).photos!)));
+      await tester.pumpApp(
+        Material(
+          child: PetImagesList(DummyPets.pet1.copyWith(photos: []).photos!),
+        ),
+      );
 
       await tester.pump();
       expect(

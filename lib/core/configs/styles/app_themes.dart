@@ -15,7 +15,7 @@ class AppThemes {
       appBarElevation: 6.5,
       swapColors: true,
       subThemesData: const FlexSubThemesData(
-        inputDecoratorRadius: 11.0,
+        inputDecoratorRadius: 11,
         inputDecoratorFocusedBorderWidth: 2.5,
       ),
       keyColors: const FlexKeyColors(),
@@ -36,7 +36,7 @@ class AppThemes {
       blendLevel: 33,
       swapColors: true,
       subThemesData: const FlexSubThemesData(
-        inputDecoratorRadius: 11.0,
+        inputDecoratorRadius: 11,
         inputDecoratorFocusedBorderWidth: 2.5,
       ),
       keyColors: const FlexKeyColors(),
