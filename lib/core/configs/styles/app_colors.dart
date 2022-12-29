@@ -9,6 +9,12 @@ class AppColors {
   /// App secondary color
   static const Color secondary = Color(0xff2E2828);
 
+
+
+  static const Color kBrown = Color(0xff503A3A);
+
+
+
   /// App black color
   static const Color black = Color(0xff141414);
 

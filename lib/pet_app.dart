@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:pet_heaven/core/configs/styles/app_themes.dart';
-import 'package:pet_heaven/features/pet/views/pages/pets_list_page.dart';
+import 'package:pet_heaven/features/pet/views/pages/home_page.dart';
 
 /// Main App Widget
 class PetsApp extends ConsumerWidget {
@@ -16,7 +16,7 @@ class PetsApp extends ConsumerWidget {
       themeMode: ThemeMode.dark,
       theme: AppThemes.lightTheme,
       darkTheme: AppThemes.darkTheme,
-      home: const PetListPage(),
+      home: const HomePage(),
     );
   }
 }
