@@ -32,8 +32,8 @@ class AppThemes {
   static ThemeData get lightTheme {
     return FlexThemeData.light(
       scheme: FlexScheme.sanJuanBlue,
-      surfaceMode: FlexSurfaceMode.levelSurfacesLowScaffold,
-      blendLevel: 9,
+      surfaceMode: FlexSurfaceMode.highScaffoldLowSurfacesVariantDialog,
+      blendLevel: 33,
       swapColors: true,
       subThemesData: const FlexSubThemesData(
         inputDecoratorRadius: 11.0,
