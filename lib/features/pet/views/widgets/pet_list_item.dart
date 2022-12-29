@@ -46,33 +46,35 @@ class PetListItem extends ConsumerWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Hero(
-                  tag: 'pet_${data.id}_profile_picture',
-                  child: ClipRRect(
-                    borderRadius: const BorderRadius.only(
-                      topLeft: Radius.circular(12),
-                      topRight: Radius.circular(12),
-                      bottomRight: Radius.circular(50),
-                    ),
-                    child: Stack(
-                      children: [
-                        if (data.photos == null || data.photos!.isEmpty)
-                          Image.asset(
-                            'assets/images/placeholder.png',
-                            fit: BoxFit.cover,
-                            width: MediaQuery.of(context).size.width,
-                            height: 160,
-                          )
-                        else
-                          AppCachedNetworkImage(
-                            imageUrl: data.photos!.first.large!,
-                            fit: BoxFit.cover,
-                            width: MediaQuery.of(context).size.width,
-                            height: 160,
-                          ),
-                        AdoptedShadowWidget(petId: data.id!),
-                        AlreadyAdoptedMarker(petId: data.id!),
-                      ],
+                Flexible(
+                  child: Hero(
+                    tag: 'pet_${data.id}_profile_picture',
+                    child: ClipRRect(
+                      borderRadius: const BorderRadius.only(
+                        topLeft: Radius.circular(12),
+                        topRight: Radius.circular(12),
+                        bottomRight: Radius.circular(50),
+                      ),
+                      child: Stack(
+                        children: [
+                          if (data.photos == null || data.photos!.isEmpty)
+                            Image.asset(
+                              'assets/images/placeholder.png',
+                              fit: BoxFit.cover,
+                              width: MediaQuery.of(context).size.width,
+                              height: 160,
+                            )
+                          else
+                            AppCachedNetworkImage(
+                              imageUrl: data.photos!.first.large!,
+                              fit: BoxFit.cover,
+                              width: MediaQuery.of(context).size.width,
+                              height: 160,
+                            ),
+                          AdoptedShadowWidget(petId: data.id!),
+                          AlreadyAdoptedMarker(petId: data.id!),
+                        ],
+                      ),
                     ),
                   ),
                 ),
