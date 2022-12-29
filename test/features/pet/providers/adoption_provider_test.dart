@@ -5,6 +5,7 @@ import 'package:pet_heaven/core/services/storage/storage_service.dart';
 import 'package:pet_heaven/core/services/storage/storage_service_provider.dart';
 import 'package:pet_heaven/features/pet/providers/adoption_provider.dart';
 
+import '../../../test-utils/dummy-data/dummy_pets.dart';
 import '../../../test-utils/mocks.dart';
 
 void main() {
@@ -40,6 +41,25 @@ void main() {
       () => petListListener(
         null,
         <int>[],
+      ),
+    ).called(1);
+
+    // ignore: inference_failure_on_function_invocation
+    when(() => mockStorageService.set(any(), any())).thenAnswer((_) async {});
+
+    when(() => mockStorageService.get(adoptKey))
+        .thenReturn(<int>[DummyPets.pet1.id!]);
+
+    providerContainer.read(adoptMeProvider.notifier).adopt(DummyPets.pet1.id!);
+
+    final secondReading = providerContainer.read(adoptMeProvider);
+
+    expect(secondReading, [DummyPets.pet1.id!]);
+
+    verify(
+      () => petListListener(
+        [DummyPets.pet1.id!],
+        [DummyPets.pet1.id!],
       ),
     ).called(1);
 
