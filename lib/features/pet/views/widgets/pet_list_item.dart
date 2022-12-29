@@ -5,7 +5,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:pet_heaven/core/configs/styles/app_colors.dart';
 import 'package:pet_heaven/core/widgets/app_cached_network_image.dart';
 import 'package:pet_heaven/core/widgets/error_view.dart';
-import 'package:pet_heaven/core/widgets/list_item_shimmer.dart';
+import 'package:pet_heaven/core/widgets/shimmer.dart';
 import 'package:pet_heaven/features/pet/model/pet.dart';
 import 'package:pet_heaven/features/pet/providers/adoption_provider.dart';
 import 'package:pet_heaven/features/pet/providers/current_pet_provider.dart';
@@ -139,7 +139,7 @@ class PetListItem extends ConsumerWidget {
         log(error.toString());
         return const ErrorView();
       },
-      loading: () => const ListItemShimmer(),
+      loading: Shimmer.new,
     );
   }
 }

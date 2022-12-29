@@ -25,7 +25,7 @@ class AdoptMeButton extends ConsumerWidget {
         width: double.infinity,
         child: ElevatedButton(
           style: ElevatedButton.styleFrom(
-            foregroundColor: AppColors.white,
+            // foregroundColor: AppColors.white,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(20),
             ),

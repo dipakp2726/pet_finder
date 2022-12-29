@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:pet_heaven/core/configs/styles/app_colors.dart';
 import 'package:pet_heaven/features/pet/views/pages/history_page.dart';
 import 'package:pet_heaven/features/pet/views/pages/pets_list_page.dart';
 
@@ -28,9 +27,6 @@ class _HomePageState extends State<HomePage> {
         children: widgetOptions,
       ),
       bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: AppColors.kBrown,
-        selectedItemColor: AppColors.white,
-        unselectedItemColor: Colors.grey,
         currentIndex: _selectedIndex,
         onTap: _onItemTapped,
         items: const [

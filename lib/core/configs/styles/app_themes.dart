@@ -1,4 +1,6 @@
+import 'package:flex_color_scheme/flex_color_scheme.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:pet_heaven/core/configs/styles/app_colors.dart';
 import 'package:pet_heaven/core/configs/styles/app_text_styles.dart';
 
@@ -6,39 +8,44 @@ import 'package:pet_heaven/core/configs/styles/app_text_styles.dart';
 class AppThemes {
   /// Dark theme data of the app
   static ThemeData get darkTheme {
-    return ThemeData(
-      brightness: Brightness.dark,
-      fontFamily: AppTextStyles.fontFamily,
-      primaryColor: AppColors.getMaterialColorFromColor(AppColors.primary),
-      colorScheme: const ColorScheme.dark(
-        primary: AppColors.primary,
-        secondary: AppColors.secondary,
-        // background: AppColors.black,
+    return FlexThemeData.dark(
+      scheme: FlexScheme.sanJuanBlue,
+      surfaceMode: FlexSurfaceMode.levelSurfacesLowScaffold,
+      blendLevel: 15,
+      appBarElevation: 6.5,
+      swapColors: true,
+      subThemesData: const FlexSubThemesData(
+        inputDecoratorRadius: 11.0,
+        inputDecoratorFocusedBorderWidth: 2.5,
       ),
+      keyColors: const FlexKeyColors(),
+      visualDensity: FlexColorScheme.comfortablePlatformDensity,
+      useMaterial3: true,
+      swapLegacyOnMaterial3: true,
       textTheme: TextThemes.darkTextTheme,
       primaryTextTheme: TextThemes.primaryTextTheme,
-      appBarTheme: const AppBarTheme(
-        elevation: 0,
-        titleTextStyle: AppTextStyles.h2,
-      ),
+      fontFamily: GoogleFonts.poppins().fontFamily,
     );
   }
 
   /// Light theme data of the app
   static ThemeData get lightTheme {
-    return ThemeData(
-      brightness: Brightness.light,
-      primaryColor: AppColors.getMaterialColorFromColor(AppColors.primary),
-      textTheme: TextThemes.textTheme,
+    return FlexThemeData.light(
+      scheme: FlexScheme.sanJuanBlue,
+      surfaceMode: FlexSurfaceMode.levelSurfacesLowScaffold,
+      blendLevel: 9,
+      swapColors: true,
+      subThemesData: const FlexSubThemesData(
+        inputDecoratorRadius: 11.0,
+        inputDecoratorFocusedBorderWidth: 2.5,
+      ),
+      keyColors: const FlexKeyColors(),
+      visualDensity: FlexColorScheme.comfortablePlatformDensity,
+      useMaterial3: true,
+      swapLegacyOnMaterial3: true,
+      textTheme: TextThemes.darkTextTheme,
       primaryTextTheme: TextThemes.primaryTextTheme,
-      colorScheme: const ColorScheme.light(
-        primary: AppColors.primary,
-        secondary: AppColors.secondary,
-      ),
-      appBarTheme: const AppBarTheme(
-        elevation: 0,
-        backgroundColor: AppColors.white,
-      ),
+      fontFamily: GoogleFonts.poppins().fontFamily,
     );
   }
 }

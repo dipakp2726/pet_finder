@@ -10,26 +10,34 @@ class PetListPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        leading: const Icon(Icons.menu),
-        actions: [
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(Icons.add_alert),
-          ),
-          const CircleAvatar(),
-        ],
-      ),
-      body: Padding(
-        padding: const EdgeInsets.all(8),
-        child: Column(
-          children: const [
-            PetSearchBar(),
-            Expanded(
-              child: PetList(),
+    return GestureDetector(
+      onTap: (){
+        FocusScope.of(context).requestFocus(FocusNode());
+      },
+      child: Scaffold(
+        appBar: AppBar(
+          title: const Text('Adopt Pet'),
+          actions: [
+            IconButton(
+              onPressed: () {},
+              icon: const Icon(Icons.dark_mode),
+            ),
+            const Padding(
+              padding: EdgeInsets.all(8),
+              child: CircleAvatar(),
             ),
           ],
+        ),
+        body: Padding(
+          padding: const EdgeInsets.all(8),
+          child: Column(
+            children: const [
+              PetSearchBar(),
+              Expanded(
+                child: PetList(),
+              ),
+            ],
+          ),
         ),
       ),
     );
