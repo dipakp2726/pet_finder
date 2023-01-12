@@ -1,16 +1,41 @@
-# pet_heaven
+# Pet Finder App
 
-A new Flutter project.
+[![style: very good analysis][very_good_analysis_badge]][very_good_analysis_link]
+[![License: MIT][license_badge]][license_link]
 
-## Getting Started
+An example of riverpod architecture which use "[petfinder](https://www.petfinder.com/developers/v2/docs/)" api.
 
-This project is a starting point for a Flutter application.
+## App Architecture and Folder Structure
 
-A few resources to get you started if this is your first Flutter project:
+The code of the app implements clean architecture to separate the UI, domain and data layers with a feature-first approach for folder structure.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### Folder Structure
+
+```
+lib
+├── core
+│   ├── configs
+│   ├── exceptions
+│   ├── models
+│   ├── services
+│   │   ├── http
+│   │   └── storage
+│   └── widgets
+├── features
+│   ├── pet
+│       ├── models
+│       ├── providers
+│       ├── repositories
+│       └── views
+│           ├── pages
+│           └── widgets
+│  
+├── main.dart
+└── pet_app.dart
+```
+
+[license_badge]: https://img.shields.io/badge/license-MIT-blue.svg
+[license_link]: https://opensource.org/licenses/MIT
+[very_good_analysis_badge]: https://img.shields.io/badge/style-very_good_analysis-B22C89.svg
+[very_good_analysis_link]: https://pub.dev/packages/very_good_analysis
