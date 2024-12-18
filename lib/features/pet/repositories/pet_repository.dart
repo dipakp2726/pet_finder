@@ -21,7 +21,6 @@ abstract class PetRepository {
   /// See: https://api.petfinder.com/v2/animals
   String get path;
 
-
   /// Request to get a pet details endpoint
   Future<Pet> getAnimalDetails(
     int animalId, {

@@ -87,7 +87,10 @@ class PetListItem extends ConsumerWidget {
                       Text(
                         data.name ?? ' Name',
                         overflow: TextOverflow.ellipsis,
-                        style: Theme.of(context).textTheme.headline4!.copyWith(
+                        style: Theme.of(context)
+                            .textTheme
+                            .headlineMedium!
+                            .copyWith(
                               color: AppColors.black,
                             ),
                       ),
@@ -96,7 +99,8 @@ class PetListItem extends ConsumerWidget {
                         child: Text(
                           data.name!.getPrice(),
                           overflow: TextOverflow.ellipsis,
-                          style: Theme.of(context).primaryTextTheme.headline4,
+                          style:
+                              Theme.of(context).primaryTextTheme.headlineMedium,
                         ),
                       ),
                       Row(
@@ -112,7 +116,7 @@ class PetListItem extends ConsumerWidget {
                               overflow: TextOverflow.ellipsis,
                               style: Theme.of(context)
                                   .textTheme
-                                  .bodyText2!
+                                  .bodyMedium!
                                   .copyWith(
                                     color: AppColors.black,
                                   ),
@@ -121,10 +125,12 @@ class PetListItem extends ConsumerWidget {
                           Text(
                             '-${data.contact?.address?.state ?? ' State'}',
                             overflow: TextOverflow.ellipsis,
-                            style:
-                                Theme.of(context).textTheme.bodyText2!.copyWith(
-                                      color: AppColors.black,
-                                    ),
+                            style: Theme.of(context)
+                                .textTheme
+                                .bodyMedium!
+                                .copyWith(
+                                  color: AppColors.black,
+                                ),
                           ),
                         ],
                       ),
@@ -183,7 +189,7 @@ class AlreadyAdoptedMarker extends ConsumerWidget {
               alignment: Alignment.topLeft,
               child: Text(
                 'Already Adopted',
-                style: Theme.of(context).textTheme.headline4,
+                style: Theme.of(context).textTheme.headlineMedium,
               ),
             ),
           )

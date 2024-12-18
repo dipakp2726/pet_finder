@@ -8,9 +8,9 @@ import 'package:pet_heaven/features/pet/providers/adoption_provider.dart';
 /// Button widget that allows adopting pet
 class AdoptMeButton extends ConsumerStatefulWidget {
   const AdoptMeButton({
-    super.key,
     required this.petId,
     required this.petName,
+    super.key,
   });
 
   final int petId;
@@ -56,7 +56,7 @@ class _AdoptState extends ConsumerState<AdoptMeButton> {
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20),
                   ),
-                  textStyle: Theme.of(context).textTheme.headline2,
+                  textStyle: Theme.of(context).textTheme.displayMedium,
                 ),
                 onPressed: !isAdopted
                     ? () {
@@ -83,7 +83,7 @@ class _AdoptState extends ConsumerState<AdoptMeButton> {
               Colors.blue,
               Colors.pink,
               Colors.orange,
-              Colors.purple
+              Colors.purple,
             ],
           ),
         ),
@@ -98,11 +98,11 @@ class _AdoptState extends ConsumerState<AdoptMeButton> {
         child: AlertDialog(
           title: Text(
             'Congratulations',
-            style: Theme.of(context).textTheme.headline2,
+            style: Theme.of(context).textTheme.displayMedium,
           ),
           content: Text(
             'You’ve now adopted $petName',
-            style: Theme.of(context).textTheme.headline4,
+            style: Theme.of(context).textTheme.headlineMedium,
           ),
           actions: [
             ElevatedButton(

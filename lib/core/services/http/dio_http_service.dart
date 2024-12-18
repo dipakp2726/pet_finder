@@ -36,7 +36,7 @@ class DioHttpService implements HttpService {
   @override
   Map<String, String> headers = {
     'accept': 'application/json',
-    'content-type': 'application/json'
+    'content-type': 'application/json',
   };
 
   @override

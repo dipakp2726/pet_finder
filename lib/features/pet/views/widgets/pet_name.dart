@@ -28,7 +28,7 @@ class PetName extends StatelessWidget {
           ),
           child: Text(
             petName,
-            style: Theme.of(context).textTheme.headline1!.copyWith(
+            style: Theme.of(context).textTheme.displayLarge!.copyWith(
                   fontSize: petName.length > 10 ? 40 : 60,
                   fontWeight: FontWeight.w400,
                   color: AppColors.white,
@@ -45,7 +45,7 @@ class PetName extends StatelessWidget {
             child: Text(
               petName.getPrice(),
               overflow: TextOverflow.ellipsis,
-              style: Theme.of(context).primaryTextTheme.headline1,
+              style: Theme.of(context).primaryTextTheme.displayLarge,
             ),
           ),
         ),

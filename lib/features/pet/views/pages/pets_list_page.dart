@@ -11,7 +11,7 @@ class PetListPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: (){
+      onTap: () {
         FocusScope.of(context).requestFocus(FocusNode());
       },
       child: Scaffold(
@@ -28,10 +28,10 @@ class PetListPage extends StatelessWidget {
             ),
           ],
         ),
-        body: Padding(
-          padding: const EdgeInsets.all(8),
+        body: const Padding(
+          padding: EdgeInsets.all(8),
           child: Column(
-            children: const [
+            children: [
               PetSearchBar(),
               Expanded(
                 child: PetList(),

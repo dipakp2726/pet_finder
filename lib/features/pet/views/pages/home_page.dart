@@ -17,11 +17,13 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       body: IndexedStack(
         index: _selectedIndex,
-        children:  [
+        children: [
           const PetListPage(
             key: PageStorageKey('petList'),
           ),
-          HistoryPage(key: UniqueKey(),),
+          HistoryPage(
+            key: UniqueKey(),
+          ),
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(

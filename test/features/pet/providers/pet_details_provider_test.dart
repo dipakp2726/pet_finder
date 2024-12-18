@@ -30,7 +30,7 @@ void main() {
 
     providerContainer.listen<AsyncValue<Pet>>(
       petDetailsProvider(DummyPets.pet1.id!),
-      petListener,
+      petListener.call,
       fireImmediately: true,
     );
 

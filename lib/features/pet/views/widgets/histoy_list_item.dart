@@ -21,7 +21,7 @@ class HistoryListItem extends ConsumerWidget {
                 builder: (context) => PetDetailsPage(
                   petId: pet.id!,
                   petAvatar:
-                  pet.photos!.isNotEmpty ? pet.photos!.first.large : null,
+                      pet.photos!.isNotEmpty ? pet.photos!.first.large : null,
                   petName: pet.name!,
                 ),
               ),
@@ -51,7 +51,7 @@ class HistoryListItem extends ConsumerWidget {
                     children: [
                       Text(
                         pet.name!,
-                        style: Theme.of(context).textTheme.headline2,
+                        style: Theme.of(context).textTheme.displayMedium,
                       ),
                     ],
                   ),

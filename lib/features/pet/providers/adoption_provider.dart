@@ -28,7 +28,6 @@ class AdoptMe extends _$AdoptMe {
   }
 }
 
-
 /// provider that allows adopting pet
 @riverpod
 void adoptPet(AdoptPetRef ref, {required int petId}) {

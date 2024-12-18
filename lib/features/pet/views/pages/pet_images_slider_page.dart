@@ -7,9 +7,9 @@ import 'package:pet_heaven/features/pet/views/widgets/slider_action.dart';
 class PetImagesSliderPage extends StatefulWidget {
   /// Creates a new instance of [PetImagesSliderPage]
   const PetImagesSliderPage({
+    required this.images,
     super.key,
     this.initialImageIndex = 0,
-    required this.images,
   });
 
   /// The initial image index to the slider should first open to

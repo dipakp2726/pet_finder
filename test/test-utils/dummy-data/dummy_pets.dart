@@ -17,12 +17,12 @@ class DummyPets {
           "primary": "Cattle Dog",
           "secondary": "German Shepherd Dog",
           "mixed": true,
-          "unknown": false
+          "unknown": false,
         },
         "colors": {
           "primary": "Brown \/ Chocolate",
           "secondary": null,
-          "tertiary": null
+          "tertiary": null,
         },
         "age": "Young",
         "gender": "Female",
@@ -33,7 +33,7 @@ class DummyPets {
           "house_trained": false,
           "declawed": null,
           "special_needs": false,
-          "shots_current": true
+          "shots_current": true,
         },
         "environment": {"children": null, "dogs": null, "cats": null},
         "tags": [],
@@ -56,14 +56,14 @@ class DummyPets {
             "city": "Bonita",
             "state": "CA",
             "postcode": "91908",
-            "country": "US"
-          }
+            "country": "US",
+          },
         },
         "_links": {
           "self": {"href": "\/v2\/animals\/59276506"},
           "type": {"href": "\/v2\/types\/dog"},
-          "organization": {"href": "\/v2\/organizations\/ca2563"}
-        }
+          "organization": {"href": "\/v2\/organizations\/ca2563"},
+        },
       }
     ],
     "pagination": {
@@ -72,9 +72,9 @@ class DummyPets {
       "current_page": 1,
       "total_pages": 13183,
       "_links": {
-        "next": {"href": "\/v2\/animals?page=2"}
-      }
-    }
+        "next": {"href": "\/v2\/animals?page=2"},
+      },
+    },
   };
 
   static final petResp = {
@@ -89,12 +89,12 @@ class DummyPets {
         "primary": "German Shepherd Dog",
         "secondary": null,
         "mixed": true,
-        "unknown": false
+        "unknown": false,
       },
       "colors": {
         "primary": "Black",
         "secondary": "Yellow \/ Tan \/ Blond \/ Fawn",
-        "tertiary": null
+        "tertiary": null,
       },
       "age": "Baby",
       "gender": "Male",
@@ -105,7 +105,7 @@ class DummyPets {
         "house_trained": false,
         "declawed": null,
         "special_needs": false,
-        "shots_current": true
+        "shots_current": true,
       },
       "environment": {"children": null, "dogs": null, "cats": null},
       "tags": [],
@@ -122,7 +122,7 @@ class DummyPets {
           "large":
               "https:\/\/dl5zpyw5k3jeb.cloudfront.net\/photos\/pets\/59243302\/1\/?bust=1671760532\u0026width=600",
           "full":
-              "https:\/\/dl5zpyw5k3jeb.cloudfront.net\/photos\/pets\/59243302\/1\/?bust=1671760532"
+              "https:\/\/dl5zpyw5k3jeb.cloudfront.net\/photos\/pets\/59243302\/1\/?bust=1671760532",
         },
         {
           "small":
@@ -132,7 +132,7 @@ class DummyPets {
           "large":
               "https:\/\/dl5zpyw5k3jeb.cloudfront.net\/photos\/pets\/59243302\/2\/?bust=1671760532\u0026width=600",
           "full":
-              "https:\/\/dl5zpyw5k3jeb.cloudfront.net\/photos\/pets\/59243302\/2\/?bust=1671760532"
+              "https:\/\/dl5zpyw5k3jeb.cloudfront.net\/photos\/pets\/59243302\/2\/?bust=1671760532",
         }
       ],
       "primary_photo_cropped": {
@@ -143,7 +143,7 @@ class DummyPets {
         "large":
             "https:\/\/dl5zpyw5k3jeb.cloudfront.net\/photos\/pets\/59243302\/1\/?bust=1671760532\u0026width=600",
         "full":
-            "https:\/\/dl5zpyw5k3jeb.cloudfront.net\/photos\/pets\/59243302\/1\/?bust=1671760532"
+            "https:\/\/dl5zpyw5k3jeb.cloudfront.net\/photos\/pets\/59243302\/1\/?bust=1671760532",
       },
       "videos": [],
       "status": "adoptable",
@@ -159,15 +159,15 @@ class DummyPets {
           "city": "Portsmouth",
           "state": "OH",
           "postcode": "45662",
-          "country": "US"
-        }
+          "country": "US",
+        },
       },
       "_links": {
         "self": {"href": "\/v2\/animals\/59243302"},
         "type": {"href": "\/v2\/types\/dog"},
-        "organization": {"href": "\/v2\/organizations\/oh415"}
-      }
-    }
+        "organization": {"href": "\/v2\/organizations\/oh415"},
+      },
+    },
   };
   static final petRespWithoutImages = {
     "animal": {
@@ -181,12 +181,12 @@ class DummyPets {
         "primary": "German Shepherd Dog",
         "secondary": null,
         "mixed": true,
-        "unknown": false
+        "unknown": false,
       },
       "colors": {
         "primary": "Black",
         "secondary": "Yellow \/ Tan \/ Blond \/ Fawn",
-        "tertiary": null
+        "tertiary": null,
       },
       "age": "Baby",
       "gender": "Male",
@@ -197,7 +197,7 @@ class DummyPets {
         "house_trained": false,
         "declawed": null,
         "special_needs": false,
-        "shots_current": true
+        "shots_current": true,
       },
       "environment": {"children": null, "dogs": null, "cats": null},
       "tags": [],
@@ -210,20 +210,20 @@ class DummyPets {
           "small": 'avatar_url',
           "medium": 'avatar_url',
           "large": 'avatar_url',
-          "full": "'avatar_url'"
+          "full": "'avatar_url'",
         },
         {
           "small": 'avatar_url',
           "medium": 'avatar_url',
           "large": 'avatar_url',
-          "full": 'avatar_url'
+          "full": 'avatar_url',
         }
       ],
       "primary_photo_cropped": {
         "small": 'avatar_url',
         "medium": 'avatar_url',
         "large": 'avatar_url',
-        "full": 'avatar_url'
+        "full": 'avatar_url',
       },
       "videos": [],
       "status": "adoptable",
@@ -239,15 +239,15 @@ class DummyPets {
           "city": "Portsmouth",
           "state": "OH",
           "postcode": "45662",
-          "country": "US"
-        }
+          "country": "US",
+        },
       },
       "_links": {
         "self": {"href": "\/v2\/animals\/59243302"},
         "type": {"href": "\/v2\/types\/dog"},
-        "organization": {"href": "\/v2\/organizations\/oh415"}
-      }
-    }
+        "organization": {"href": "\/v2\/organizations\/oh415"},
+      },
+    },
   };
 
   static final petList1 = PetList.fromJson(petListResp);

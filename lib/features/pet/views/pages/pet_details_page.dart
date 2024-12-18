@@ -18,10 +18,10 @@ import 'package:pet_heaven/features/pet/views/widgets/pet_name.dart';
 class PetDetailsPage extends ConsumerWidget {
   /// Creates new instance of [PetDetailsPage]
   const PetDetailsPage({
-    super.key,
     required this.petId,
     required this.petName,
     required this.petAvatar,
+    super.key,
   });
 
   /// Pet name
@@ -84,7 +84,7 @@ class PetDetailsPage extends ConsumerWidget {
               petId: petId,
               petName: petName,
             ),
-          )
+          ),
         ],
       ),
     );

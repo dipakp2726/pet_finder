@@ -26,7 +26,7 @@ void main() {
 
     providerContainer.listen<List<int>>(
       adoptMeProvider,
-      petListListener,
+      petListListener.call,
       fireImmediately: true,
     );
 

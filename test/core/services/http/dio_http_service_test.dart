@@ -21,7 +21,7 @@ void main() {
           validateStatus: (status) => true,
           headers: <String, dynamic>{
             'accept': 'application/json',
-            'content-type': 'application/json'
+            'content-type': 'application/json',
           },
         ),
       ),

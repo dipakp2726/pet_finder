@@ -6,9 +6,9 @@ import 'package:pet_heaven/features/pet/views/widgets/pet_cover.dart';
 class PetDetailsSliverAppBar extends StatelessWidget {
   /// Creates a new instance of [PetDetailsSliverAppBar]
   const PetDetailsSliverAppBar({
+    required this.petId,
     super.key,
     this.avatar,
-    required this.petId,
   });
 
   /// Id of the Pet being previewed

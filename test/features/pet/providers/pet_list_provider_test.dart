@@ -32,7 +32,7 @@ void main() {
 
     providerContainer.listen<AsyncValue<PetList>>(
       getPetListProvider(page: 0),
-      petListener,
+      petListener.call,
       fireImmediately: true,
     );
 

@@ -8,7 +8,7 @@ void main() {
   test('returns correct results count', () async {
     final providerContainer = ProviderContainer(
       overrides: [
-        getPetListProvider(page: 0).overrideWith((ref) => DummyPets.petList1)
+        getPetListProvider(page: 0).overrideWith((ref) => DummyPets.petList1),
       ],
     );
 

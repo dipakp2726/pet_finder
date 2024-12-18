@@ -34,14 +34,14 @@ class PetBio extends StatelessWidget {
             children: [
               Text(
                 'Description',
-                style: Theme.of(context).textTheme.headline2,
+                style: Theme.of(context).textTheme.displayMedium,
               ),
               const SizedBox(height: 20),
               Text(
                 biography ?? '',
                 style: Theme.of(context)
                     .textTheme
-                    .bodyText1!
+                    .bodyLarge!
                     .copyWith(height: 1.5),
               ),
             ],

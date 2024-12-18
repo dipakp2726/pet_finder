@@ -23,7 +23,7 @@ void main() {
         overrides: [
           storageServiceProvider.overrideWithValue(mockStorageService),
           petDetailsProvider(DummyPets.petWithoutImage.id!)
-              .overrideWith((ref) => Future.value(DummyPets.petWithoutImage))
+              .overrideWith((ref) => Future.value(DummyPets.petWithoutImage)),
         ],
       );
 

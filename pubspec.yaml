@@ -25,8 +25,8 @@ dependencies:
   freezed_annotation: ^2.2.0
   json_annotation: ^4.7.0
   mocktail_image_network: ^1.1.0
-  flex_color_scheme: ^7.3.1
-  confetti: ^0.7.0
+  flex_color_scheme: ^8.0.2
+  confetti: ^0.8.0
 
 dependency_overrides:
   analyzer: ^5.0.0
@@ -40,7 +40,7 @@ dev_dependencies:
   http_mock_adapter: ^0.6.1
   mocktail: ^1.0.3
   riverpod_generator: ^2.3.9
-  very_good_analysis: ^5.1.0
+  very_good_analysis: ^6.0.0
   json_serializable: ^6.5.4
 
 

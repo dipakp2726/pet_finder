@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 class FadeInEffect extends StatefulWidget {
   const FadeInEffect({
-    super.key,
     required this.child,
+    super.key,
     this.intervalStart = 0,
     this.keepAlive = false,
   });

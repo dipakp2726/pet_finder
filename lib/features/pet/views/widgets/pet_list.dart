@@ -32,7 +32,7 @@ class PetList extends ConsumerWidget {
             itemCount: count,
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2,
-              childAspectRatio: .70,
+              childAspectRatio: .8,
               crossAxisSpacing: 10,
               mainAxisSpacing: 10,
             ),

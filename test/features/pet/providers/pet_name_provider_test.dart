@@ -16,7 +16,7 @@ void main() {
     // Observe a provider and spy the changes.
     container.listen<String>(
       petNameProvider,
-      listener,
+      listener.call,
       fireImmediately: true,
     );
 

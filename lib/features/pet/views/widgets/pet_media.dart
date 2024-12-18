@@ -42,7 +42,7 @@ class PetImagesList extends StatelessWidget {
                   padding: const EdgeInsetsDirectional.only(start: 40, end: 17),
                   child: Text(
                     'Images',
-                    style: Theme.of(context).textTheme.headline4,
+                    style: Theme.of(context).textTheme.headlineMedium,
                   ),
                 ),
                 const SizedBox(height: 10),

@@ -6,8 +6,8 @@ import 'package:pet_heaven/core/configs/styles/app_colors.dart';
 class SliderAction extends StatelessWidget {
   /// Creates a new instance of [SliderAction]
   const SliderAction({
-    super.key,
     required this.icon,
+    super.key,
     this.onTap,
     this.color = AppColors.primary,
   });

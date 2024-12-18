@@ -12,8 +12,8 @@ import 'package:pet_heaven/core/widgets/shimmer.dart';
 class AppCachedNetworkImage extends StatelessWidget {
   /// Creates a new instance of [AppCachedNetworkImage]
   const AppCachedNetworkImage({
-    super.key,
     required this.imageUrl,
+    super.key,
     this.customErrorWidgetBuilder,
     this.noLoader = false,
     this.customErrorWidget,

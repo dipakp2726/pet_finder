@@ -69,9 +69,9 @@ class PetInfo extends StatelessWidget {
 
 class InfoBox extends StatelessWidget {
   const InfoBox({
-    super.key,
     required this.title,
     required this.value,
+    super.key,
   });
 
   final String title;
@@ -94,7 +94,7 @@ class InfoBox extends StatelessWidget {
         children: [
           Text(
             value,
-            style: Theme.of(context).primaryTextTheme.headline4,
+            style: Theme.of(context).primaryTextTheme.headlineMedium,
           ),
           const SizedBox(height: 8),
           Text(title),
