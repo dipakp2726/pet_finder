@@ -9,6 +9,8 @@ An example of riverpod architecture which use "[petfinder](https://www.petfinder
 
 The code of the app implements clean architecture to separate the UI, domain and data layers with a feature-first approach for folder structure.
 
+### Demo
+![demo](https://github.com/dipakp2726/pet_finder/blob/main/demo.gif)
 
 ### Folder Structure
 
