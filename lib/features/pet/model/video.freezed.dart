@@ -12,7 +12,7 @@ part of 'video.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 Video _$VideoFromJson(Map<String, dynamic> json) {
   return _Video.fromJson(json);
@@ -22,8 +22,12 @@ Video _$VideoFromJson(Map<String, dynamic> json) {
 mixin _$Video {
   String? get embed => throw _privateConstructorUsedError;
 
+  /// Serializes this Video to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Video
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $VideoCopyWith<Video> get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -45,6 +49,8 @@ class _$VideoCopyWithImpl<$Res, $Val extends Video>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Video
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -60,26 +66,31 @@ class _$VideoCopyWithImpl<$Res, $Val extends Video>
 }
 
 /// @nodoc
-abstract class _$$_VideoCopyWith<$Res> implements $VideoCopyWith<$Res> {
-  factory _$$_VideoCopyWith(_$_Video value, $Res Function(_$_Video) then) =
-      __$$_VideoCopyWithImpl<$Res>;
+abstract class _$$VideoImplCopyWith<$Res> implements $VideoCopyWith<$Res> {
+  factory _$$VideoImplCopyWith(
+          _$VideoImpl value, $Res Function(_$VideoImpl) then) =
+      __$$VideoImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String? embed});
 }
 
 /// @nodoc
-class __$$_VideoCopyWithImpl<$Res> extends _$VideoCopyWithImpl<$Res, _$_Video>
-    implements _$$_VideoCopyWith<$Res> {
-  __$$_VideoCopyWithImpl(_$_Video _value, $Res Function(_$_Video) _then)
+class __$$VideoImplCopyWithImpl<$Res>
+    extends _$VideoCopyWithImpl<$Res, _$VideoImpl>
+    implements _$$VideoImplCopyWith<$Res> {
+  __$$VideoImplCopyWithImpl(
+      _$VideoImpl _value, $Res Function(_$VideoImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Video
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? embed = freezed,
   }) {
-    return _then(_$_Video(
+    return _then(_$VideoImpl(
       embed: freezed == embed
           ? _value.embed
           : embed // ignore: cast_nullable_to_non_nullable
@@ -90,11 +101,11 @@ class __$$_VideoCopyWithImpl<$Res> extends _$VideoCopyWithImpl<$Res, _$_Video>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Video implements _Video {
-  _$_Video({this.embed});
+class _$VideoImpl implements _Video {
+  _$VideoImpl({this.embed});
 
-  factory _$_Video.fromJson(Map<String, dynamic> json) =>
-      _$$_VideoFromJson(json);
+  factory _$VideoImpl.fromJson(Map<String, dynamic> json) =>
+      _$$VideoImplFromJson(json);
 
   @override
   final String? embed;
@@ -105,40 +116,45 @@ class _$_Video implements _Video {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Video &&
+            other is _$VideoImpl &&
             (identical(other.embed, embed) || other.embed == embed));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, embed);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Video
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_VideoCopyWith<_$_Video> get copyWith =>
-      __$$_VideoCopyWithImpl<_$_Video>(this, _$identity);
+  _$$VideoImplCopyWith<_$VideoImpl> get copyWith =>
+      __$$VideoImplCopyWithImpl<_$VideoImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_VideoToJson(
+    return _$$VideoImplToJson(
       this,
     );
   }
 }
 
 abstract class _Video implements Video {
-  factory _Video({final String? embed}) = _$_Video;
+  factory _Video({final String? embed}) = _$VideoImpl;
 
-  factory _Video.fromJson(Map<String, dynamic> json) = _$_Video.fromJson;
+  factory _Video.fromJson(Map<String, dynamic> json) = _$VideoImpl.fromJson;
 
   @override
   String? get embed;
+
+  /// Create a copy of Video
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_VideoCopyWith<_$_Video> get copyWith =>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$VideoImplCopyWith<_$VideoImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

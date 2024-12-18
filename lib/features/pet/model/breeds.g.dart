@@ -6,14 +6,15 @@ part of 'breeds.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_Breeds _$$_BreedsFromJson(Map<String, dynamic> json) => _$_Breeds(
+_$BreedsImpl _$$BreedsImplFromJson(Map<String, dynamic> json) => _$BreedsImpl(
       primary: json['primary'] as String?,
       secondary: json['secondary'],
       mixed: json['mixed'] as bool?,
       unknown: json['unknown'] as bool?,
     );
 
-Map<String, dynamic> _$$_BreedsToJson(_$_Breeds instance) => <String, dynamic>{
+Map<String, dynamic> _$$BreedsImplToJson(_$BreedsImpl instance) =>
+    <String, dynamic>{
       'primary': instance.primary,
       'secondary': instance.secondary,
       'mixed': instance.mixed,

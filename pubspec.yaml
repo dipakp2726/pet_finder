@@ -28,9 +28,6 @@ dependencies:
   flex_color_scheme: ^8.0.2
   confetti: ^0.8.0
 
-dependency_overrides:
-  analyzer: ^5.0.0
-
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -39,7 +36,7 @@ dev_dependencies:
   hive_test: ^1.0.1
   http_mock_adapter: ^0.6.1
   mocktail: ^1.0.3
-  riverpod_generator: ^2.3.9
+  riverpod_generator: ^2.6.3
   very_good_analysis: ^6.0.0
   json_serializable: ^6.5.4
 

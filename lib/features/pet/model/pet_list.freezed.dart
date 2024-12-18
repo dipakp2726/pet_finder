@@ -12,7 +12,7 @@ part of 'pet_list.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 PetList _$PetListFromJson(Map<String, dynamic> json) {
   return _Model.fromJson(json);
@@ -23,8 +23,12 @@ mixin _$PetList {
   List<Pet>? get animals => throw _privateConstructorUsedError;
   Pagination? get pagination => throw _privateConstructorUsedError;
 
+  /// Serializes this PetList to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of PetList
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $PetListCopyWith<PetList> get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -48,6 +52,8 @@ class _$PetListCopyWithImpl<$Res, $Val extends PetList>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of PetList
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -66,6 +72,8 @@ class _$PetListCopyWithImpl<$Res, $Val extends PetList>
     ) as $Val);
   }
 
+  /// Create a copy of PetList
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $PaginationCopyWith<$Res>? get pagination {
@@ -80,9 +88,10 @@ class _$PetListCopyWithImpl<$Res, $Val extends PetList>
 }
 
 /// @nodoc
-abstract class _$$_ModelCopyWith<$Res> implements $PetListCopyWith<$Res> {
-  factory _$$_ModelCopyWith(_$_Model value, $Res Function(_$_Model) then) =
-      __$$_ModelCopyWithImpl<$Res>;
+abstract class _$$ModelImplCopyWith<$Res> implements $PetListCopyWith<$Res> {
+  factory _$$ModelImplCopyWith(
+          _$ModelImpl value, $Res Function(_$ModelImpl) then) =
+      __$$ModelImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({List<Pet>? animals, Pagination? pagination});
@@ -92,18 +101,22 @@ abstract class _$$_ModelCopyWith<$Res> implements $PetListCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_ModelCopyWithImpl<$Res> extends _$PetListCopyWithImpl<$Res, _$_Model>
-    implements _$$_ModelCopyWith<$Res> {
-  __$$_ModelCopyWithImpl(_$_Model _value, $Res Function(_$_Model) _then)
+class __$$ModelImplCopyWithImpl<$Res>
+    extends _$PetListCopyWithImpl<$Res, _$ModelImpl>
+    implements _$$ModelImplCopyWith<$Res> {
+  __$$ModelImplCopyWithImpl(
+      _$ModelImpl _value, $Res Function(_$ModelImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of PetList
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? animals = freezed,
     Object? pagination = freezed,
   }) {
-    return _then(_$_Model(
+    return _then(_$ModelImpl(
       animals: freezed == animals
           ? _value._animals
           : animals // ignore: cast_nullable_to_non_nullable
@@ -118,11 +131,11 @@ class __$$_ModelCopyWithImpl<$Res> extends _$PetListCopyWithImpl<$Res, _$_Model>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Model implements _Model {
-  _$_Model({final List<Pet>? animals, this.pagination}) : _animals = animals;
+class _$ModelImpl implements _Model {
+  _$ModelImpl({final List<Pet>? animals, this.pagination}) : _animals = animals;
 
-  factory _$_Model.fromJson(Map<String, dynamic> json) =>
-      _$$_ModelFromJson(json);
+  factory _$ModelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ModelImplFromJson(json);
 
   final List<Pet>? _animals;
   @override
@@ -143,29 +156,31 @@ class _$_Model implements _Model {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Model &&
+            other is _$ModelImpl &&
             const DeepCollectionEquality().equals(other._animals, _animals) &&
             (identical(other.pagination, pagination) ||
                 other.pagination == pagination));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType, const DeepCollectionEquality().hash(_animals), pagination);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of PetList
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ModelCopyWith<_$_Model> get copyWith =>
-      __$$_ModelCopyWithImpl<_$_Model>(this, _$identity);
+  _$$ModelImplCopyWith<_$ModelImpl> get copyWith =>
+      __$$ModelImplCopyWithImpl<_$ModelImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ModelToJson(
+    return _$$ModelImplToJson(
       this,
     );
   }
@@ -173,16 +188,19 @@ class _$_Model implements _Model {
 
 abstract class _Model implements PetList {
   factory _Model({final List<Pet>? animals, final Pagination? pagination}) =
-      _$_Model;
+      _$ModelImpl;
 
-  factory _Model.fromJson(Map<String, dynamic> json) = _$_Model.fromJson;
+  factory _Model.fromJson(Map<String, dynamic> json) = _$ModelImpl.fromJson;
 
   @override
   List<Pet>? get animals;
   @override
   Pagination? get pagination;
+
+  /// Create a copy of PetList
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_ModelCopyWith<_$_Model> get copyWith =>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ModelImplCopyWith<_$ModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

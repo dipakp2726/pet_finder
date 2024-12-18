@@ -12,7 +12,7 @@ part of 'type.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 Type _$TypeFromJson(Map<String, dynamic> json) {
   return _Type.fromJson(json);
@@ -22,8 +22,12 @@ Type _$TypeFromJson(Map<String, dynamic> json) {
 mixin _$Type {
   String? get href => throw _privateConstructorUsedError;
 
+  /// Serializes this Type to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Type
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $TypeCopyWith<Type> get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -45,6 +49,8 @@ class _$TypeCopyWithImpl<$Res, $Val extends Type>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Type
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -60,26 +66,30 @@ class _$TypeCopyWithImpl<$Res, $Val extends Type>
 }
 
 /// @nodoc
-abstract class _$$_TypeCopyWith<$Res> implements $TypeCopyWith<$Res> {
-  factory _$$_TypeCopyWith(_$_Type value, $Res Function(_$_Type) then) =
-      __$$_TypeCopyWithImpl<$Res>;
+abstract class _$$TypeImplCopyWith<$Res> implements $TypeCopyWith<$Res> {
+  factory _$$TypeImplCopyWith(
+          _$TypeImpl value, $Res Function(_$TypeImpl) then) =
+      __$$TypeImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String? href});
 }
 
 /// @nodoc
-class __$$_TypeCopyWithImpl<$Res> extends _$TypeCopyWithImpl<$Res, _$_Type>
-    implements _$$_TypeCopyWith<$Res> {
-  __$$_TypeCopyWithImpl(_$_Type _value, $Res Function(_$_Type) _then)
+class __$$TypeImplCopyWithImpl<$Res>
+    extends _$TypeCopyWithImpl<$Res, _$TypeImpl>
+    implements _$$TypeImplCopyWith<$Res> {
+  __$$TypeImplCopyWithImpl(_$TypeImpl _value, $Res Function(_$TypeImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Type
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? href = freezed,
   }) {
-    return _then(_$_Type(
+    return _then(_$TypeImpl(
       href: freezed == href
           ? _value.href
           : href // ignore: cast_nullable_to_non_nullable
@@ -90,10 +100,11 @@ class __$$_TypeCopyWithImpl<$Res> extends _$TypeCopyWithImpl<$Res, _$_Type>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Type implements _Type {
-  _$_Type({this.href});
+class _$TypeImpl implements _Type {
+  _$TypeImpl({this.href});
 
-  factory _$_Type.fromJson(Map<String, dynamic> json) => _$$_TypeFromJson(json);
+  factory _$TypeImpl.fromJson(Map<String, dynamic> json) =>
+      _$$TypeImplFromJson(json);
 
   @override
   final String? href;
@@ -104,39 +115,45 @@ class _$_Type implements _Type {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Type &&
+            other is _$TypeImpl &&
             (identical(other.href, href) || other.href == href));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, href);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Type
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_TypeCopyWith<_$_Type> get copyWith =>
-      __$$_TypeCopyWithImpl<_$_Type>(this, _$identity);
+  _$$TypeImplCopyWith<_$TypeImpl> get copyWith =>
+      __$$TypeImplCopyWithImpl<_$TypeImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_TypeToJson(
+    return _$$TypeImplToJson(
       this,
     );
   }
 }
 
 abstract class _Type implements Type {
-  factory _Type({final String? href}) = _$_Type;
+  factory _Type({final String? href}) = _$TypeImpl;
 
-  factory _Type.fromJson(Map<String, dynamic> json) = _$_Type.fromJson;
+  factory _Type.fromJson(Map<String, dynamic> json) = _$TypeImpl.fromJson;
 
   @override
   String? get href;
+
+  /// Create a copy of Type
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_TypeCopyWith<_$_Type> get copyWith => throw _privateConstructorUsedError;
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$TypeImplCopyWith<_$TypeImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

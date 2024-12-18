@@ -6,7 +6,7 @@ part of 'links.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_Links _$$_LinksFromJson(Map<String, dynamic> json) => _$_Links(
+_$LinksImpl _$$LinksImplFromJson(Map<String, dynamic> json) => _$LinksImpl(
       self: json['self'] == null
           ? null
           : Self.fromJson(json['self'] as Map<String, dynamic>),
@@ -18,7 +18,8 @@ _$_Links _$$_LinksFromJson(Map<String, dynamic> json) => _$_Links(
           : Organization.fromJson(json['organization'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$_LinksToJson(_$_Links instance) => <String, dynamic>{
+Map<String, dynamic> _$$LinksImplToJson(_$LinksImpl instance) =>
+    <String, dynamic>{
       'self': instance.self,
       'type': instance.type,
       'organization': instance.organization,

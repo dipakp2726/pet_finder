@@ -12,7 +12,7 @@ part of 'self.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 Self _$SelfFromJson(Map<String, dynamic> json) {
   return _Self.fromJson(json);
@@ -22,8 +22,12 @@ Self _$SelfFromJson(Map<String, dynamic> json) {
 mixin _$Self {
   String? get href => throw _privateConstructorUsedError;
 
+  /// Serializes this Self to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Self
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $SelfCopyWith<Self> get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -45,6 +49,8 @@ class _$SelfCopyWithImpl<$Res, $Val extends Self>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Self
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -60,26 +66,30 @@ class _$SelfCopyWithImpl<$Res, $Val extends Self>
 }
 
 /// @nodoc
-abstract class _$$_SelfCopyWith<$Res> implements $SelfCopyWith<$Res> {
-  factory _$$_SelfCopyWith(_$_Self value, $Res Function(_$_Self) then) =
-      __$$_SelfCopyWithImpl<$Res>;
+abstract class _$$SelfImplCopyWith<$Res> implements $SelfCopyWith<$Res> {
+  factory _$$SelfImplCopyWith(
+          _$SelfImpl value, $Res Function(_$SelfImpl) then) =
+      __$$SelfImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String? href});
 }
 
 /// @nodoc
-class __$$_SelfCopyWithImpl<$Res> extends _$SelfCopyWithImpl<$Res, _$_Self>
-    implements _$$_SelfCopyWith<$Res> {
-  __$$_SelfCopyWithImpl(_$_Self _value, $Res Function(_$_Self) _then)
+class __$$SelfImplCopyWithImpl<$Res>
+    extends _$SelfCopyWithImpl<$Res, _$SelfImpl>
+    implements _$$SelfImplCopyWith<$Res> {
+  __$$SelfImplCopyWithImpl(_$SelfImpl _value, $Res Function(_$SelfImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Self
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? href = freezed,
   }) {
-    return _then(_$_Self(
+    return _then(_$SelfImpl(
       href: freezed == href
           ? _value.href
           : href // ignore: cast_nullable_to_non_nullable
@@ -90,10 +100,11 @@ class __$$_SelfCopyWithImpl<$Res> extends _$SelfCopyWithImpl<$Res, _$_Self>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Self implements _Self {
-  _$_Self({this.href});
+class _$SelfImpl implements _Self {
+  _$SelfImpl({this.href});
 
-  factory _$_Self.fromJson(Map<String, dynamic> json) => _$$_SelfFromJson(json);
+  factory _$SelfImpl.fromJson(Map<String, dynamic> json) =>
+      _$$SelfImplFromJson(json);
 
   @override
   final String? href;
@@ -104,39 +115,45 @@ class _$_Self implements _Self {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Self &&
+            other is _$SelfImpl &&
             (identical(other.href, href) || other.href == href));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, href);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Self
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_SelfCopyWith<_$_Self> get copyWith =>
-      __$$_SelfCopyWithImpl<_$_Self>(this, _$identity);
+  _$$SelfImplCopyWith<_$SelfImpl> get copyWith =>
+      __$$SelfImplCopyWithImpl<_$SelfImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_SelfToJson(
+    return _$$SelfImplToJson(
       this,
     );
   }
 }
 
 abstract class _Self implements Self {
-  factory _Self({final String? href}) = _$_Self;
+  factory _Self({final String? href}) = _$SelfImpl;
 
-  factory _Self.fromJson(Map<String, dynamic> json) = _$_Self.fromJson;
+  factory _Self.fromJson(Map<String, dynamic> json) = _$SelfImpl.fromJson;
 
   @override
   String? get href;
+
+  /// Create a copy of Self
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_SelfCopyWith<_$_Self> get copyWith => throw _privateConstructorUsedError;
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$SelfImplCopyWith<_$SelfImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

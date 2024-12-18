@@ -12,7 +12,7 @@ part of 'breeds.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 Breeds _$BreedsFromJson(Map<String, dynamic> json) {
   return _Breeds.fromJson(json);
@@ -25,8 +25,12 @@ mixin _$Breeds {
   bool? get mixed => throw _privateConstructorUsedError;
   bool? get unknown => throw _privateConstructorUsedError;
 
+  /// Serializes this Breeds to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Breeds
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $BreedsCopyWith<Breeds> get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -48,6 +52,8 @@ class _$BreedsCopyWithImpl<$Res, $Val extends Breeds>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Breeds
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -78,21 +84,25 @@ class _$BreedsCopyWithImpl<$Res, $Val extends Breeds>
 }
 
 /// @nodoc
-abstract class _$$_BreedsCopyWith<$Res> implements $BreedsCopyWith<$Res> {
-  factory _$$_BreedsCopyWith(_$_Breeds value, $Res Function(_$_Breeds) then) =
-      __$$_BreedsCopyWithImpl<$Res>;
+abstract class _$$BreedsImplCopyWith<$Res> implements $BreedsCopyWith<$Res> {
+  factory _$$BreedsImplCopyWith(
+          _$BreedsImpl value, $Res Function(_$BreedsImpl) then) =
+      __$$BreedsImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String? primary, dynamic secondary, bool? mixed, bool? unknown});
 }
 
 /// @nodoc
-class __$$_BreedsCopyWithImpl<$Res>
-    extends _$BreedsCopyWithImpl<$Res, _$_Breeds>
-    implements _$$_BreedsCopyWith<$Res> {
-  __$$_BreedsCopyWithImpl(_$_Breeds _value, $Res Function(_$_Breeds) _then)
+class __$$BreedsImplCopyWithImpl<$Res>
+    extends _$BreedsCopyWithImpl<$Res, _$BreedsImpl>
+    implements _$$BreedsImplCopyWith<$Res> {
+  __$$BreedsImplCopyWithImpl(
+      _$BreedsImpl _value, $Res Function(_$BreedsImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Breeds
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -101,7 +111,7 @@ class __$$_BreedsCopyWithImpl<$Res>
     Object? mixed = freezed,
     Object? unknown = freezed,
   }) {
-    return _then(_$_Breeds(
+    return _then(_$BreedsImpl(
       primary: freezed == primary
           ? _value.primary
           : primary // ignore: cast_nullable_to_non_nullable
@@ -124,11 +134,11 @@ class __$$_BreedsCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Breeds implements _Breeds {
-  _$_Breeds({this.primary, this.secondary, this.mixed, this.unknown});
+class _$BreedsImpl implements _Breeds {
+  _$BreedsImpl({this.primary, this.secondary, this.mixed, this.unknown});
 
-  factory _$_Breeds.fromJson(Map<String, dynamic> json) =>
-      _$$_BreedsFromJson(json);
+  factory _$BreedsImpl.fromJson(Map<String, dynamic> json) =>
+      _$$BreedsImplFromJson(json);
 
   @override
   final String? primary;
@@ -145,30 +155,32 @@ class _$_Breeds implements _Breeds {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Breeds &&
+            other is _$BreedsImpl &&
             (identical(other.primary, primary) || other.primary == primary) &&
             const DeepCollectionEquality().equals(other.secondary, secondary) &&
             (identical(other.mixed, mixed) || other.mixed == mixed) &&
             (identical(other.unknown, unknown) || other.unknown == unknown));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, primary,
       const DeepCollectionEquality().hash(secondary), mixed, unknown);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Breeds
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_BreedsCopyWith<_$_Breeds> get copyWith =>
-      __$$_BreedsCopyWithImpl<_$_Breeds>(this, _$identity);
+  _$$BreedsImplCopyWith<_$BreedsImpl> get copyWith =>
+      __$$BreedsImplCopyWithImpl<_$BreedsImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_BreedsToJson(
+    return _$$BreedsImplToJson(
       this,
     );
   }
@@ -179,9 +191,9 @@ abstract class _Breeds implements Breeds {
       {final String? primary,
       final dynamic secondary,
       final bool? mixed,
-      final bool? unknown}) = _$_Breeds;
+      final bool? unknown}) = _$BreedsImpl;
 
-  factory _Breeds.fromJson(Map<String, dynamic> json) = _$_Breeds.fromJson;
+  factory _Breeds.fromJson(Map<String, dynamic> json) = _$BreedsImpl.fromJson;
 
   @override
   String? get primary;
@@ -191,8 +203,11 @@ abstract class _Breeds implements Breeds {
   bool? get mixed;
   @override
   bool? get unknown;
+
+  /// Create a copy of Breeds
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_BreedsCopyWith<_$_Breeds> get copyWith =>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$BreedsImplCopyWith<_$BreedsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

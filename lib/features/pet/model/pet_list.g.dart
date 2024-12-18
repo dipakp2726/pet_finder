@@ -6,7 +6,7 @@ part of 'pet_list.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_Model _$$_ModelFromJson(Map<String, dynamic> json) => _$_Model(
+_$ModelImpl _$$ModelImplFromJson(Map<String, dynamic> json) => _$ModelImpl(
       animals: (json['animals'] as List<dynamic>?)
           ?.map((e) => Pet.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -15,7 +15,8 @@ _$_Model _$$_ModelFromJson(Map<String, dynamic> json) => _$_Model(
           : Pagination.fromJson(json['pagination'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$_ModelToJson(_$_Model instance) => <String, dynamic>{
+Map<String, dynamic> _$$ModelImplToJson(_$ModelImpl instance) =>
+    <String, dynamic>{
       'animals': instance.animals,
       'pagination': instance.pagination,
     };

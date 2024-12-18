@@ -12,7 +12,7 @@ part of 'photo.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 Photo _$PhotoFromJson(Map<String, dynamic> json) {
   return _Photo.fromJson(json);
@@ -25,8 +25,12 @@ mixin _$Photo {
   String? get large => throw _privateConstructorUsedError;
   String? get full => throw _privateConstructorUsedError;
 
+  /// Serializes this Photo to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Photo
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $PhotoCopyWith<Photo> get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -48,6 +52,8 @@ class _$PhotoCopyWithImpl<$Res, $Val extends Photo>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Photo
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -78,20 +84,25 @@ class _$PhotoCopyWithImpl<$Res, $Val extends Photo>
 }
 
 /// @nodoc
-abstract class _$$_PhotoCopyWith<$Res> implements $PhotoCopyWith<$Res> {
-  factory _$$_PhotoCopyWith(_$_Photo value, $Res Function(_$_Photo) then) =
-      __$$_PhotoCopyWithImpl<$Res>;
+abstract class _$$PhotoImplCopyWith<$Res> implements $PhotoCopyWith<$Res> {
+  factory _$$PhotoImplCopyWith(
+          _$PhotoImpl value, $Res Function(_$PhotoImpl) then) =
+      __$$PhotoImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String? small, String? medium, String? large, String? full});
 }
 
 /// @nodoc
-class __$$_PhotoCopyWithImpl<$Res> extends _$PhotoCopyWithImpl<$Res, _$_Photo>
-    implements _$$_PhotoCopyWith<$Res> {
-  __$$_PhotoCopyWithImpl(_$_Photo _value, $Res Function(_$_Photo) _then)
+class __$$PhotoImplCopyWithImpl<$Res>
+    extends _$PhotoCopyWithImpl<$Res, _$PhotoImpl>
+    implements _$$PhotoImplCopyWith<$Res> {
+  __$$PhotoImplCopyWithImpl(
+      _$PhotoImpl _value, $Res Function(_$PhotoImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Photo
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -100,7 +111,7 @@ class __$$_PhotoCopyWithImpl<$Res> extends _$PhotoCopyWithImpl<$Res, _$_Photo>
     Object? large = freezed,
     Object? full = freezed,
   }) {
-    return _then(_$_Photo(
+    return _then(_$PhotoImpl(
       small: freezed == small
           ? _value.small
           : small // ignore: cast_nullable_to_non_nullable
@@ -123,11 +134,11 @@ class __$$_PhotoCopyWithImpl<$Res> extends _$PhotoCopyWithImpl<$Res, _$_Photo>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Photo implements _Photo {
-  _$_Photo({this.small, this.medium, this.large, this.full});
+class _$PhotoImpl implements _Photo {
+  _$PhotoImpl({this.small, this.medium, this.large, this.full});
 
-  factory _$_Photo.fromJson(Map<String, dynamic> json) =>
-      _$$_PhotoFromJson(json);
+  factory _$PhotoImpl.fromJson(Map<String, dynamic> json) =>
+      _$$PhotoImplFromJson(json);
 
   @override
   final String? small;
@@ -144,29 +155,31 @@ class _$_Photo implements _Photo {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Photo &&
+            other is _$PhotoImpl &&
             (identical(other.small, small) || other.small == small) &&
             (identical(other.medium, medium) || other.medium == medium) &&
             (identical(other.large, large) || other.large == large) &&
             (identical(other.full, full) || other.full == full));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, small, medium, large, full);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Photo
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_PhotoCopyWith<_$_Photo> get copyWith =>
-      __$$_PhotoCopyWithImpl<_$_Photo>(this, _$identity);
+  _$$PhotoImplCopyWith<_$PhotoImpl> get copyWith =>
+      __$$PhotoImplCopyWithImpl<_$PhotoImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_PhotoToJson(
+    return _$$PhotoImplToJson(
       this,
     );
   }
@@ -177,9 +190,9 @@ abstract class _Photo implements Photo {
       {final String? small,
       final String? medium,
       final String? large,
-      final String? full}) = _$_Photo;
+      final String? full}) = _$PhotoImpl;
 
-  factory _Photo.fromJson(Map<String, dynamic> json) = _$_Photo.fromJson;
+  factory _Photo.fromJson(Map<String, dynamic> json) = _$PhotoImpl.fromJson;
 
   @override
   String? get small;
@@ -189,8 +202,11 @@ abstract class _Photo implements Photo {
   String? get large;
   @override
   String? get full;
+
+  /// Create a copy of Photo
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_PhotoCopyWith<_$_Photo> get copyWith =>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$PhotoImplCopyWith<_$PhotoImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

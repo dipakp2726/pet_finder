@@ -49,6 +49,7 @@ class AppColors {
       800: getShade(color, value: 0.2, darker: true),
       900: getShade(color, value: 0.25, darker: true),
     };
+    //ignore: deprecated_member_use
     return MaterialColor(color.value, colorShades);
   }
 }

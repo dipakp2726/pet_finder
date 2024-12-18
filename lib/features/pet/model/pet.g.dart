@@ -6,8 +6,8 @@ part of 'pet.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_Animal _$$_AnimalFromJson(Map<String, dynamic> json) => _$_Animal(
-      id: json['id'] as int?,
+_$AnimalImpl _$$AnimalImplFromJson(Map<String, dynamic> json) => _$AnimalImpl(
+      id: (json['id'] as num?)?.toInt(),
       organizationId: json['organization_id'] as String?,
       url: json['url'] as String?,
       type: json['type'] as String?,
@@ -47,7 +47,8 @@ _$_Animal _$$_AnimalFromJson(Map<String, dynamic> json) => _$_Animal(
           : Links.fromJson(json['_links'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$_AnimalToJson(_$_Animal instance) => <String, dynamic>{
+Map<String, dynamic> _$$AnimalImplToJson(_$AnimalImpl instance) =>
+    <String, dynamic>{
       'id': instance.id,
       'organization_id': instance.organizationId,
       'url': instance.url,

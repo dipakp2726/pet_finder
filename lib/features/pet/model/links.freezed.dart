@@ -12,7 +12,7 @@ part of 'links.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 Links _$LinksFromJson(Map<String, dynamic> json) {
   return _Links.fromJson(json);
@@ -24,8 +24,12 @@ mixin _$Links {
   Type? get type => throw _privateConstructorUsedError;
   Organization? get organization => throw _privateConstructorUsedError;
 
+  /// Serializes this Links to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Links
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $LinksCopyWith<Links> get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -51,6 +55,8 @@ class _$LinksCopyWithImpl<$Res, $Val extends Links>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Links
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -74,6 +80,8 @@ class _$LinksCopyWithImpl<$Res, $Val extends Links>
     ) as $Val);
   }
 
+  /// Create a copy of Links
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $SelfCopyWith<$Res>? get self {
@@ -86,6 +94,8 @@ class _$LinksCopyWithImpl<$Res, $Val extends Links>
     });
   }
 
+  /// Create a copy of Links
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $TypeCopyWith<$Res>? get type {
@@ -98,6 +108,8 @@ class _$LinksCopyWithImpl<$Res, $Val extends Links>
     });
   }
 
+  /// Create a copy of Links
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $OrganizationCopyWith<$Res>? get organization {
@@ -112,9 +124,10 @@ class _$LinksCopyWithImpl<$Res, $Val extends Links>
 }
 
 /// @nodoc
-abstract class _$$_LinksCopyWith<$Res> implements $LinksCopyWith<$Res> {
-  factory _$$_LinksCopyWith(_$_Links value, $Res Function(_$_Links) then) =
-      __$$_LinksCopyWithImpl<$Res>;
+abstract class _$$LinksImplCopyWith<$Res> implements $LinksCopyWith<$Res> {
+  factory _$$LinksImplCopyWith(
+          _$LinksImpl value, $Res Function(_$LinksImpl) then) =
+      __$$LinksImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({Self? self, Type? type, Organization? organization});
@@ -128,11 +141,15 @@ abstract class _$$_LinksCopyWith<$Res> implements $LinksCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_LinksCopyWithImpl<$Res> extends _$LinksCopyWithImpl<$Res, _$_Links>
-    implements _$$_LinksCopyWith<$Res> {
-  __$$_LinksCopyWithImpl(_$_Links _value, $Res Function(_$_Links) _then)
+class __$$LinksImplCopyWithImpl<$Res>
+    extends _$LinksCopyWithImpl<$Res, _$LinksImpl>
+    implements _$$LinksImplCopyWith<$Res> {
+  __$$LinksImplCopyWithImpl(
+      _$LinksImpl _value, $Res Function(_$LinksImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Links
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -140,7 +157,7 @@ class __$$_LinksCopyWithImpl<$Res> extends _$LinksCopyWithImpl<$Res, _$_Links>
     Object? type = freezed,
     Object? organization = freezed,
   }) {
-    return _then(_$_Links(
+    return _then(_$LinksImpl(
       self: freezed == self
           ? _value.self
           : self // ignore: cast_nullable_to_non_nullable
@@ -159,11 +176,11 @@ class __$$_LinksCopyWithImpl<$Res> extends _$LinksCopyWithImpl<$Res, _$_Links>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Links implements _Links {
-  _$_Links({this.self, this.type, this.organization});
+class _$LinksImpl implements _Links {
+  _$LinksImpl({this.self, this.type, this.organization});
 
-  factory _$_Links.fromJson(Map<String, dynamic> json) =>
-      _$$_LinksFromJson(json);
+  factory _$LinksImpl.fromJson(Map<String, dynamic> json) =>
+      _$$LinksImplFromJson(json);
 
   @override
   final Self? self;
@@ -178,29 +195,31 @@ class _$_Links implements _Links {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Links &&
+            other is _$LinksImpl &&
             (identical(other.self, self) || other.self == self) &&
             (identical(other.type, type) || other.type == type) &&
             (identical(other.organization, organization) ||
                 other.organization == organization));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, self, type, organization);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Links
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_LinksCopyWith<_$_Links> get copyWith =>
-      __$$_LinksCopyWithImpl<_$_Links>(this, _$identity);
+  _$$LinksImplCopyWith<_$LinksImpl> get copyWith =>
+      __$$LinksImplCopyWithImpl<_$LinksImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_LinksToJson(
+    return _$$LinksImplToJson(
       this,
     );
   }
@@ -210,9 +229,9 @@ abstract class _Links implements Links {
   factory _Links(
       {final Self? self,
       final Type? type,
-      final Organization? organization}) = _$_Links;
+      final Organization? organization}) = _$LinksImpl;
 
-  factory _Links.fromJson(Map<String, dynamic> json) = _$_Links.fromJson;
+  factory _Links.fromJson(Map<String, dynamic> json) = _$LinksImpl.fromJson;
 
   @override
   Self? get self;
@@ -220,8 +239,11 @@ abstract class _Links implements Links {
   Type? get type;
   @override
   Organization? get organization;
+
+  /// Create a copy of Links
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_LinksCopyWith<_$_Links> get copyWith =>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$LinksImplCopyWith<_$LinksImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -12,7 +12,7 @@ part of 'environment.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 Environment _$EnvironmentFromJson(Map<String, dynamic> json) {
   return _Environment.fromJson(json);
@@ -24,8 +24,12 @@ mixin _$Environment {
   bool? get dogs => throw _privateConstructorUsedError;
   bool? get cats => throw _privateConstructorUsedError;
 
+  /// Serializes this Environment to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Environment
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $EnvironmentCopyWith<Environment> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -49,6 +53,8 @@ class _$EnvironmentCopyWithImpl<$Res, $Val extends Environment>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Environment
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -74,24 +80,26 @@ class _$EnvironmentCopyWithImpl<$Res, $Val extends Environment>
 }
 
 /// @nodoc
-abstract class _$$_EnvironmentCopyWith<$Res>
+abstract class _$$EnvironmentImplCopyWith<$Res>
     implements $EnvironmentCopyWith<$Res> {
-  factory _$$_EnvironmentCopyWith(
-          _$_Environment value, $Res Function(_$_Environment) then) =
-      __$$_EnvironmentCopyWithImpl<$Res>;
+  factory _$$EnvironmentImplCopyWith(
+          _$EnvironmentImpl value, $Res Function(_$EnvironmentImpl) then) =
+      __$$EnvironmentImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({bool? children, bool? dogs, bool? cats});
 }
 
 /// @nodoc
-class __$$_EnvironmentCopyWithImpl<$Res>
-    extends _$EnvironmentCopyWithImpl<$Res, _$_Environment>
-    implements _$$_EnvironmentCopyWith<$Res> {
-  __$$_EnvironmentCopyWithImpl(
-      _$_Environment _value, $Res Function(_$_Environment) _then)
+class __$$EnvironmentImplCopyWithImpl<$Res>
+    extends _$EnvironmentCopyWithImpl<$Res, _$EnvironmentImpl>
+    implements _$$EnvironmentImplCopyWith<$Res> {
+  __$$EnvironmentImplCopyWithImpl(
+      _$EnvironmentImpl _value, $Res Function(_$EnvironmentImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Environment
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -99,7 +107,7 @@ class __$$_EnvironmentCopyWithImpl<$Res>
     Object? dogs = freezed,
     Object? cats = freezed,
   }) {
-    return _then(_$_Environment(
+    return _then(_$EnvironmentImpl(
       children: freezed == children
           ? _value.children
           : children // ignore: cast_nullable_to_non_nullable
@@ -118,11 +126,11 @@ class __$$_EnvironmentCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Environment implements _Environment {
-  _$_Environment({this.children, this.dogs, this.cats});
+class _$EnvironmentImpl implements _Environment {
+  _$EnvironmentImpl({this.children, this.dogs, this.cats});
 
-  factory _$_Environment.fromJson(Map<String, dynamic> json) =>
-      _$$_EnvironmentFromJson(json);
+  factory _$EnvironmentImpl.fromJson(Map<String, dynamic> json) =>
+      _$$EnvironmentImplFromJson(json);
 
   @override
   final bool? children;
@@ -137,29 +145,31 @@ class _$_Environment implements _Environment {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Environment &&
+            other is _$EnvironmentImpl &&
             (identical(other.children, children) ||
                 other.children == children) &&
             (identical(other.dogs, dogs) || other.dogs == dogs) &&
             (identical(other.cats, cats) || other.cats == cats));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, children, dogs, cats);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Environment
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_EnvironmentCopyWith<_$_Environment> get copyWith =>
-      __$$_EnvironmentCopyWithImpl<_$_Environment>(this, _$identity);
+  _$$EnvironmentImplCopyWith<_$EnvironmentImpl> get copyWith =>
+      __$$EnvironmentImplCopyWithImpl<_$EnvironmentImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_EnvironmentToJson(
+    return _$$EnvironmentImplToJson(
       this,
     );
   }
@@ -169,10 +179,10 @@ abstract class _Environment implements Environment {
   factory _Environment(
       {final bool? children,
       final bool? dogs,
-      final bool? cats}) = _$_Environment;
+      final bool? cats}) = _$EnvironmentImpl;
 
   factory _Environment.fromJson(Map<String, dynamic> json) =
-      _$_Environment.fromJson;
+      _$EnvironmentImpl.fromJson;
 
   @override
   bool? get children;
@@ -180,8 +190,11 @@ abstract class _Environment implements Environment {
   bool? get dogs;
   @override
   bool? get cats;
+
+  /// Create a copy of Environment
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_EnvironmentCopyWith<_$_Environment> get copyWith =>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$EnvironmentImplCopyWith<_$EnvironmentImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

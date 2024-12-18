@@ -6,10 +6,11 @@ part of 'type.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_Type _$$_TypeFromJson(Map<String, dynamic> json) => _$_Type(
+_$TypeImpl _$$TypeImplFromJson(Map<String, dynamic> json) => _$TypeImpl(
       href: json['href'] as String?,
     );
 
-Map<String, dynamic> _$$_TypeToJson(_$_Type instance) => <String, dynamic>{
+Map<String, dynamic> _$$TypeImplToJson(_$TypeImpl instance) =>
+    <String, dynamic>{
       'href': instance.href,
     };

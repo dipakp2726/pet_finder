@@ -12,7 +12,7 @@ part of 'attributes.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 Attributes _$AttributesFromJson(Map<String, dynamic> json) {
   return _Attributes.fromJson(json);
@@ -30,8 +30,12 @@ mixin _$Attributes {
   @JsonKey(name: 'shots_current')
   bool? get shotsCurrent => throw _privateConstructorUsedError;
 
+  /// Serializes this Attributes to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Attributes
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $AttributesCopyWith<Attributes> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -60,6 +64,8 @@ class _$AttributesCopyWithImpl<$Res, $Val extends Attributes>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Attributes
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -95,11 +101,11 @@ class _$AttributesCopyWithImpl<$Res, $Val extends Attributes>
 }
 
 /// @nodoc
-abstract class _$$_AttributesCopyWith<$Res>
+abstract class _$$AttributesImplCopyWith<$Res>
     implements $AttributesCopyWith<$Res> {
-  factory _$$_AttributesCopyWith(
-          _$_Attributes value, $Res Function(_$_Attributes) then) =
-      __$$_AttributesCopyWithImpl<$Res>;
+  factory _$$AttributesImplCopyWith(
+          _$AttributesImpl value, $Res Function(_$AttributesImpl) then) =
+      __$$AttributesImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -111,13 +117,15 @@ abstract class _$$_AttributesCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_AttributesCopyWithImpl<$Res>
-    extends _$AttributesCopyWithImpl<$Res, _$_Attributes>
-    implements _$$_AttributesCopyWith<$Res> {
-  __$$_AttributesCopyWithImpl(
-      _$_Attributes _value, $Res Function(_$_Attributes) _then)
+class __$$AttributesImplCopyWithImpl<$Res>
+    extends _$AttributesCopyWithImpl<$Res, _$AttributesImpl>
+    implements _$$AttributesImplCopyWith<$Res> {
+  __$$AttributesImplCopyWithImpl(
+      _$AttributesImpl _value, $Res Function(_$AttributesImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Attributes
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -127,7 +135,7 @@ class __$$_AttributesCopyWithImpl<$Res>
     Object? specialNeeds = freezed,
     Object? shotsCurrent = freezed,
   }) {
-    return _then(_$_Attributes(
+    return _then(_$AttributesImpl(
       spayedNeutered: freezed == spayedNeutered
           ? _value.spayedNeutered
           : spayedNeutered // ignore: cast_nullable_to_non_nullable
@@ -154,16 +162,16 @@ class __$$_AttributesCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Attributes implements _Attributes {
-  _$_Attributes(
+class _$AttributesImpl implements _Attributes {
+  _$AttributesImpl(
       {@JsonKey(name: 'spayed_neutered') this.spayedNeutered,
       @JsonKey(name: 'house_trained') this.houseTrained,
       this.declawed,
       @JsonKey(name: 'special_needs') this.specialNeeds,
       @JsonKey(name: 'shots_current') this.shotsCurrent});
 
-  factory _$_Attributes.fromJson(Map<String, dynamic> json) =>
-      _$$_AttributesFromJson(json);
+  factory _$AttributesImpl.fromJson(Map<String, dynamic> json) =>
+      _$$AttributesImplFromJson(json);
 
   @override
   @JsonKey(name: 'spayed_neutered')
@@ -186,10 +194,10 @@ class _$_Attributes implements _Attributes {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Attributes &&
+            other is _$AttributesImpl &&
             (identical(other.spayedNeutered, spayedNeutered) ||
                 other.spayedNeutered == spayedNeutered) &&
             (identical(other.houseTrained, houseTrained) ||
@@ -201,7 +209,7 @@ class _$_Attributes implements _Attributes {
                 other.shotsCurrent == shotsCurrent));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -211,15 +219,17 @@ class _$_Attributes implements _Attributes {
       specialNeeds,
       shotsCurrent);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Attributes
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_AttributesCopyWith<_$_Attributes> get copyWith =>
-      __$$_AttributesCopyWithImpl<_$_Attributes>(this, _$identity);
+  _$$AttributesImplCopyWith<_$AttributesImpl> get copyWith =>
+      __$$AttributesImplCopyWithImpl<_$AttributesImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_AttributesToJson(
+    return _$$AttributesImplToJson(
       this,
     );
   }
@@ -232,10 +242,10 @@ abstract class _Attributes implements Attributes {
           final dynamic declawed,
           @JsonKey(name: 'special_needs') final bool? specialNeeds,
           @JsonKey(name: 'shots_current') final bool? shotsCurrent}) =
-      _$_Attributes;
+      _$AttributesImpl;
 
   factory _Attributes.fromJson(Map<String, dynamic> json) =
-      _$_Attributes.fromJson;
+      _$AttributesImpl.fromJson;
 
   @override
   @JsonKey(name: 'spayed_neutered')
@@ -251,8 +261,11 @@ abstract class _Attributes implements Attributes {
   @override
   @JsonKey(name: 'shots_current')
   bool? get shotsCurrent;
+
+  /// Create a copy of Attributes
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_AttributesCopyWith<_$_Attributes> get copyWith =>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$AttributesImplCopyWith<_$AttributesImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

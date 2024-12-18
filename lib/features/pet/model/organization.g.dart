@@ -6,12 +6,12 @@ part of 'organization.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_Organization _$$_OrganizationFromJson(Map<String, dynamic> json) =>
-    _$_Organization(
+_$OrganizationImpl _$$OrganizationImplFromJson(Map<String, dynamic> json) =>
+    _$OrganizationImpl(
       href: json['href'] as String?,
     );
 
-Map<String, dynamic> _$$_OrganizationToJson(_$_Organization instance) =>
+Map<String, dynamic> _$$OrganizationImplToJson(_$OrganizationImpl instance) =>
     <String, dynamic>{
       'href': instance.href,
     };

@@ -12,7 +12,7 @@ part of 'colors.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 Colors _$ColorsFromJson(Map<String, dynamic> json) {
   return _Colors.fromJson(json);
@@ -24,8 +24,12 @@ mixin _$Colors {
   dynamic get secondary => throw _privateConstructorUsedError;
   dynamic get tertiary => throw _privateConstructorUsedError;
 
+  /// Serializes this Colors to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Colors
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $ColorsCopyWith<Colors> get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -47,6 +51,8 @@ class _$ColorsCopyWithImpl<$Res, $Val extends Colors>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Colors
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -72,21 +78,25 @@ class _$ColorsCopyWithImpl<$Res, $Val extends Colors>
 }
 
 /// @nodoc
-abstract class _$$_ColorsCopyWith<$Res> implements $ColorsCopyWith<$Res> {
-  factory _$$_ColorsCopyWith(_$_Colors value, $Res Function(_$_Colors) then) =
-      __$$_ColorsCopyWithImpl<$Res>;
+abstract class _$$ColorsImplCopyWith<$Res> implements $ColorsCopyWith<$Res> {
+  factory _$$ColorsImplCopyWith(
+          _$ColorsImpl value, $Res Function(_$ColorsImpl) then) =
+      __$$ColorsImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({dynamic primary, dynamic secondary, dynamic tertiary});
 }
 
 /// @nodoc
-class __$$_ColorsCopyWithImpl<$Res>
-    extends _$ColorsCopyWithImpl<$Res, _$_Colors>
-    implements _$$_ColorsCopyWith<$Res> {
-  __$$_ColorsCopyWithImpl(_$_Colors _value, $Res Function(_$_Colors) _then)
+class __$$ColorsImplCopyWithImpl<$Res>
+    extends _$ColorsCopyWithImpl<$Res, _$ColorsImpl>
+    implements _$$ColorsImplCopyWith<$Res> {
+  __$$ColorsImplCopyWithImpl(
+      _$ColorsImpl _value, $Res Function(_$ColorsImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Colors
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -94,7 +104,7 @@ class __$$_ColorsCopyWithImpl<$Res>
     Object? secondary = freezed,
     Object? tertiary = freezed,
   }) {
-    return _then(_$_Colors(
+    return _then(_$ColorsImpl(
       primary: freezed == primary
           ? _value.primary
           : primary // ignore: cast_nullable_to_non_nullable
@@ -113,11 +123,11 @@ class __$$_ColorsCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Colors implements _Colors {
-  _$_Colors({this.primary, this.secondary, this.tertiary});
+class _$ColorsImpl implements _Colors {
+  _$ColorsImpl({this.primary, this.secondary, this.tertiary});
 
-  factory _$_Colors.fromJson(Map<String, dynamic> json) =>
-      _$$_ColorsFromJson(json);
+  factory _$ColorsImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ColorsImplFromJson(json);
 
   @override
   final dynamic primary;
@@ -132,16 +142,16 @@ class _$_Colors implements _Colors {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Colors &&
+            other is _$ColorsImpl &&
             const DeepCollectionEquality().equals(other.primary, primary) &&
             const DeepCollectionEquality().equals(other.secondary, secondary) &&
             const DeepCollectionEquality().equals(other.tertiary, tertiary));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -149,15 +159,17 @@ class _$_Colors implements _Colors {
       const DeepCollectionEquality().hash(secondary),
       const DeepCollectionEquality().hash(tertiary));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Colors
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ColorsCopyWith<_$_Colors> get copyWith =>
-      __$$_ColorsCopyWithImpl<_$_Colors>(this, _$identity);
+  _$$ColorsImplCopyWith<_$ColorsImpl> get copyWith =>
+      __$$ColorsImplCopyWithImpl<_$ColorsImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ColorsToJson(
+    return _$$ColorsImplToJson(
       this,
     );
   }
@@ -167,9 +179,9 @@ abstract class _Colors implements Colors {
   factory _Colors(
       {final dynamic primary,
       final dynamic secondary,
-      final dynamic tertiary}) = _$_Colors;
+      final dynamic tertiary}) = _$ColorsImpl;
 
-  factory _Colors.fromJson(Map<String, dynamic> json) = _$_Colors.fromJson;
+  factory _Colors.fromJson(Map<String, dynamic> json) = _$ColorsImpl.fromJson;
 
   @override
   dynamic get primary;
@@ -177,8 +189,11 @@ abstract class _Colors implements Colors {
   dynamic get secondary;
   @override
   dynamic get tertiary;
+
+  /// Create a copy of Colors
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_ColorsCopyWith<_$_Colors> get copyWith =>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ColorsImplCopyWith<_$ColorsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

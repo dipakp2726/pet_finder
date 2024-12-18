@@ -6,7 +6,7 @@ part of 'pet_list_provider.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-// ignore_for_file: avoid_private_typedef_functions, non_constant_identifier_names, subtype_of_sealed_class, invalid_use_of_internal_member, unused_element, constant_identifier_names, unnecessary_raw_strings, library_private_types_in_public_api
+String _$getPetListHash() => r'1ff46e97997b4e6cd9a5b3b8e3c286900196c373';
 
 /// Copied from Dart SDK
 class _SystemHash {
@@ -29,17 +29,68 @@ class _SystemHash {
   }
 }
 
-String _$getPetListHash() => r'1ff46e97997b4e6cd9a5b3b8e3c286900196c373';
+/// provider that fetches paginated pet list
+///
+/// Copied from [getPetList].
+@ProviderFor(getPetList)
+const getPetListProvider = GetPetListFamily();
+
+/// provider that fetches paginated pet list
+///
+/// Copied from [getPetList].
+class GetPetListFamily extends Family<AsyncValue<PetList>> {
+  /// provider that fetches paginated pet list
+  ///
+  /// Copied from [getPetList].
+  const GetPetListFamily();
+
+  /// provider that fetches paginated pet list
+  ///
+  /// Copied from [getPetList].
+  GetPetListProvider call({
+    required int page,
+  }) {
+    return GetPetListProvider(
+      page: page,
+    );
+  }
+
+  @override
+  GetPetListProvider getProviderOverride(
+    covariant GetPetListProvider provider,
+  ) {
+    return call(
+      page: provider.page,
+    );
+  }
+
+  static const Iterable<ProviderOrFamily>? _dependencies = null;
+
+  @override
+  Iterable<ProviderOrFamily>? get dependencies => _dependencies;
+
+  static const Iterable<ProviderOrFamily>? _allTransitiveDependencies = null;
+
+  @override
+  Iterable<ProviderOrFamily>? get allTransitiveDependencies =>
+      _allTransitiveDependencies;
+
+  @override
+  String? get name => r'getPetListProvider';
+}
 
 /// provider that fetches paginated pet list
 ///
 /// Copied from [getPetList].
 class GetPetListProvider extends AutoDisposeFutureProvider<PetList> {
+  /// provider that fetches paginated pet list
+  ///
+  /// Copied from [getPetList].
   GetPetListProvider({
-    required this.page,
-  }) : super(
+    required int page,
+  }) : this._internal(
           (ref) => getPetList(
-            ref,
+            ref as GetPetListRef,
             page: page,
           ),
           from: getPetListProvider,
@@ -48,9 +99,46 @@ class GetPetListProvider extends AutoDisposeFutureProvider<PetList> {
               const bool.fromEnvironment('dart.vm.product')
                   ? null
                   : _$getPetListHash,
+          dependencies: GetPetListFamily._dependencies,
+          allTransitiveDependencies:
+              GetPetListFamily._allTransitiveDependencies,
+          page: page,
         );
 
+  GetPetListProvider._internal(
+    super._createNotifier, {
+    required super.name,
+    required super.dependencies,
+    required super.allTransitiveDependencies,
+    required super.debugGetCreateSourceHash,
+    required super.from,
+    required this.page,
+  }) : super.internal();
+
   final int page;
+
+  @override
+  Override overrideWith(
+    FutureOr<PetList> Function(GetPetListRef provider) create,
+  ) {
+    return ProviderOverride(
+      origin: this,
+      override: GetPetListProvider._internal(
+        (ref) => create(ref as GetPetListRef),
+        from: from,
+        name: null,
+        dependencies: null,
+        allTransitiveDependencies: null,
+        debugGetCreateSourceHash: null,
+        page: page,
+      ),
+    );
+  }
+
+  @override
+  AutoDisposeFutureProviderElement<PetList> createElement() {
+    return _GetPetListProviderElement(this);
+  }
 
   @override
   bool operator ==(Object other) {
@@ -66,39 +154,19 @@ class GetPetListProvider extends AutoDisposeFutureProvider<PetList> {
   }
 }
 
-typedef GetPetListRef = AutoDisposeFutureProviderRef<PetList>;
-
-/// provider that fetches paginated pet list
-///
-/// Copied from [getPetList].
-final getPetListProvider = GetPetListFamily();
-
-class GetPetListFamily extends Family<AsyncValue<PetList>> {
-  GetPetListFamily();
-
-  GetPetListProvider call({
-    required int page,
-  }) {
-    return GetPetListProvider(
-      page: page,
-    );
-  }
-
-  @override
-  AutoDisposeFutureProvider<PetList> getProviderOverride(
-    covariant GetPetListProvider provider,
-  ) {
-    return call(
-      page: provider.page,
-    );
-  }
-
-  @override
-  List<ProviderOrFamily>? get allTransitiveDependencies => null;
-
-  @override
-  List<ProviderOrFamily>? get dependencies => null;
-
-  @override
-  String? get name => r'getPetListProvider';
+@Deprecated('Will be removed in 3.0. Use Ref instead')
+// ignore: unused_element
+mixin GetPetListRef on AutoDisposeFutureProviderRef<PetList> {
+  /// The parameter `page` of this provider.
+  int get page;
 }
+
+class _GetPetListProviderElement
+    extends AutoDisposeFutureProviderElement<PetList> with GetPetListRef {
+  _GetPetListProviderElement(super.provider);
+
+  @override
+  int get page => (origin as GetPetListProvider).page;
+}
+// ignore_for_file: type=lint
+// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package

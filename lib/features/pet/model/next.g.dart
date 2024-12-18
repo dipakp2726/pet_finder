@@ -6,10 +6,11 @@ part of 'next.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_Next _$$_NextFromJson(Map<String, dynamic> json) => _$_Next(
+_$NextImpl _$$NextImplFromJson(Map<String, dynamic> json) => _$NextImpl(
       href: json['href'] as String?,
     );
 
-Map<String, dynamic> _$$_NextToJson(_$_Next instance) => <String, dynamic>{
+Map<String, dynamic> _$$NextImplToJson(_$NextImpl instance) =>
+    <String, dynamic>{
       'href': instance.href,
     };

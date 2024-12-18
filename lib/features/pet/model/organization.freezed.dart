@@ -12,7 +12,7 @@ part of 'organization.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 Organization _$OrganizationFromJson(Map<String, dynamic> json) {
   return _Organization.fromJson(json);
@@ -22,8 +22,12 @@ Organization _$OrganizationFromJson(Map<String, dynamic> json) {
 mixin _$Organization {
   String? get href => throw _privateConstructorUsedError;
 
+  /// Serializes this Organization to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Organization
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $OrganizationCopyWith<Organization> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -47,6 +51,8 @@ class _$OrganizationCopyWithImpl<$Res, $Val extends Organization>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Organization
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -62,30 +68,32 @@ class _$OrganizationCopyWithImpl<$Res, $Val extends Organization>
 }
 
 /// @nodoc
-abstract class _$$_OrganizationCopyWith<$Res>
+abstract class _$$OrganizationImplCopyWith<$Res>
     implements $OrganizationCopyWith<$Res> {
-  factory _$$_OrganizationCopyWith(
-          _$_Organization value, $Res Function(_$_Organization) then) =
-      __$$_OrganizationCopyWithImpl<$Res>;
+  factory _$$OrganizationImplCopyWith(
+          _$OrganizationImpl value, $Res Function(_$OrganizationImpl) then) =
+      __$$OrganizationImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String? href});
 }
 
 /// @nodoc
-class __$$_OrganizationCopyWithImpl<$Res>
-    extends _$OrganizationCopyWithImpl<$Res, _$_Organization>
-    implements _$$_OrganizationCopyWith<$Res> {
-  __$$_OrganizationCopyWithImpl(
-      _$_Organization _value, $Res Function(_$_Organization) _then)
+class __$$OrganizationImplCopyWithImpl<$Res>
+    extends _$OrganizationCopyWithImpl<$Res, _$OrganizationImpl>
+    implements _$$OrganizationImplCopyWith<$Res> {
+  __$$OrganizationImplCopyWithImpl(
+      _$OrganizationImpl _value, $Res Function(_$OrganizationImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Organization
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? href = freezed,
   }) {
-    return _then(_$_Organization(
+    return _then(_$OrganizationImpl(
       href: freezed == href
           ? _value.href
           : href // ignore: cast_nullable_to_non_nullable
@@ -96,11 +104,11 @@ class __$$_OrganizationCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Organization implements _Organization {
-  _$_Organization({this.href});
+class _$OrganizationImpl implements _Organization {
+  _$OrganizationImpl({this.href});
 
-  factory _$_Organization.fromJson(Map<String, dynamic> json) =>
-      _$$_OrganizationFromJson(json);
+  factory _$OrganizationImpl.fromJson(Map<String, dynamic> json) =>
+      _$$OrganizationImplFromJson(json);
 
   @override
   final String? href;
@@ -111,41 +119,46 @@ class _$_Organization implements _Organization {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Organization &&
+            other is _$OrganizationImpl &&
             (identical(other.href, href) || other.href == href));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, href);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Organization
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_OrganizationCopyWith<_$_Organization> get copyWith =>
-      __$$_OrganizationCopyWithImpl<_$_Organization>(this, _$identity);
+  _$$OrganizationImplCopyWith<_$OrganizationImpl> get copyWith =>
+      __$$OrganizationImplCopyWithImpl<_$OrganizationImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_OrganizationToJson(
+    return _$$OrganizationImplToJson(
       this,
     );
   }
 }
 
 abstract class _Organization implements Organization {
-  factory _Organization({final String? href}) = _$_Organization;
+  factory _Organization({final String? href}) = _$OrganizationImpl;
 
   factory _Organization.fromJson(Map<String, dynamic> json) =
-      _$_Organization.fromJson;
+      _$OrganizationImpl.fromJson;
 
   @override
   String? get href;
+
+  /// Create a copy of Organization
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_OrganizationCopyWith<_$_Organization> get copyWith =>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$OrganizationImplCopyWith<_$OrganizationImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

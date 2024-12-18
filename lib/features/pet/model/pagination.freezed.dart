@@ -12,7 +12,7 @@ part of 'pagination.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 Pagination _$PaginationFromJson(Map<String, dynamic> json) {
   return _Pagination.fromJson(json);
@@ -31,8 +31,12 @@ mixin _$Pagination {
   @JsonKey(name: '_links')
   Links? get links => throw _privateConstructorUsedError;
 
+  /// Serializes this Pagination to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Pagination
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $PaginationCopyWith<Pagination> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -63,6 +67,8 @@ class _$PaginationCopyWithImpl<$Res, $Val extends Pagination>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Pagination
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -96,6 +102,8 @@ class _$PaginationCopyWithImpl<$Res, $Val extends Pagination>
     ) as $Val);
   }
 
+  /// Create a copy of Pagination
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $LinksCopyWith<$Res>? get links {
@@ -110,11 +118,11 @@ class _$PaginationCopyWithImpl<$Res, $Val extends Pagination>
 }
 
 /// @nodoc
-abstract class _$$_PaginationCopyWith<$Res>
+abstract class _$$PaginationImplCopyWith<$Res>
     implements $PaginationCopyWith<$Res> {
-  factory _$$_PaginationCopyWith(
-          _$_Pagination value, $Res Function(_$_Pagination) then) =
-      __$$_PaginationCopyWithImpl<$Res>;
+  factory _$$PaginationImplCopyWith(
+          _$PaginationImpl value, $Res Function(_$PaginationImpl) then) =
+      __$$PaginationImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -129,13 +137,15 @@ abstract class _$$_PaginationCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_PaginationCopyWithImpl<$Res>
-    extends _$PaginationCopyWithImpl<$Res, _$_Pagination>
-    implements _$$_PaginationCopyWith<$Res> {
-  __$$_PaginationCopyWithImpl(
-      _$_Pagination _value, $Res Function(_$_Pagination) _then)
+class __$$PaginationImplCopyWithImpl<$Res>
+    extends _$PaginationCopyWithImpl<$Res, _$PaginationImpl>
+    implements _$$PaginationImplCopyWith<$Res> {
+  __$$PaginationImplCopyWithImpl(
+      _$PaginationImpl _value, $Res Function(_$PaginationImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Pagination
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -145,7 +155,7 @@ class __$$_PaginationCopyWithImpl<$Res>
     Object? totalPages = freezed,
     Object? links = freezed,
   }) {
-    return _then(_$_Pagination(
+    return _then(_$PaginationImpl(
       countPerPage: freezed == countPerPage
           ? _value.countPerPage
           : countPerPage // ignore: cast_nullable_to_non_nullable
@@ -172,16 +182,16 @@ class __$$_PaginationCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Pagination implements _Pagination {
-  _$_Pagination(
+class _$PaginationImpl implements _Pagination {
+  _$PaginationImpl(
       {@JsonKey(name: 'count_per_page') this.countPerPage,
       @JsonKey(name: 'total_count') this.totalCount,
       @JsonKey(name: 'current_page') this.currentPage,
       @JsonKey(name: 'total_pages') this.totalPages,
       @JsonKey(name: '_links') this.links});
 
-  factory _$_Pagination.fromJson(Map<String, dynamic> json) =>
-      _$$_PaginationFromJson(json);
+  factory _$PaginationImpl.fromJson(Map<String, dynamic> json) =>
+      _$$PaginationImplFromJson(json);
 
   @override
   @JsonKey(name: 'count_per_page')
@@ -205,10 +215,10 @@ class _$_Pagination implements _Pagination {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Pagination &&
+            other is _$PaginationImpl &&
             (identical(other.countPerPage, countPerPage) ||
                 other.countPerPage == countPerPage) &&
             (identical(other.totalCount, totalCount) ||
@@ -220,20 +230,22 @@ class _$_Pagination implements _Pagination {
             (identical(other.links, links) || other.links == links));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType, countPerPage, totalCount, currentPage, totalPages, links);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Pagination
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_PaginationCopyWith<_$_Pagination> get copyWith =>
-      __$$_PaginationCopyWithImpl<_$_Pagination>(this, _$identity);
+  _$$PaginationImplCopyWith<_$PaginationImpl> get copyWith =>
+      __$$PaginationImplCopyWithImpl<_$PaginationImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_PaginationToJson(
+    return _$$PaginationImplToJson(
       this,
     );
   }
@@ -245,10 +257,10 @@ abstract class _Pagination implements Pagination {
       @JsonKey(name: 'total_count') final int? totalCount,
       @JsonKey(name: 'current_page') final int? currentPage,
       @JsonKey(name: 'total_pages') final int? totalPages,
-      @JsonKey(name: '_links') final Links? links}) = _$_Pagination;
+      @JsonKey(name: '_links') final Links? links}) = _$PaginationImpl;
 
   factory _Pagination.fromJson(Map<String, dynamic> json) =
-      _$_Pagination.fromJson;
+      _$PaginationImpl.fromJson;
 
   @override
   @JsonKey(name: 'count_per_page')
@@ -265,8 +277,11 @@ abstract class _Pagination implements Pagination {
   @override
   @JsonKey(name: '_links')
   Links? get links;
+
+  /// Create a copy of Pagination
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_PaginationCopyWith<_$_Pagination> get copyWith =>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$PaginationImplCopyWith<_$PaginationImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

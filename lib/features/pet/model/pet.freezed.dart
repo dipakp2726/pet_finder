@@ -12,7 +12,7 @@ part of 'pet.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 Pet _$PetFromJson(Map<String, dynamic> json) {
   return _Animal.fromJson(json);
@@ -46,8 +46,12 @@ mixin _$Pet {
   @JsonKey(name: '_links')
   Links? get links => throw _privateConstructorUsedError;
 
+  /// Serializes this Pet to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Pet
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $PetCopyWith<Pet> get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -97,6 +101,8 @@ class _$PetCopyWithImpl<$Res, $Val extends Pet> implements $PetCopyWith<$Res> {
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Pet
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -215,6 +221,8 @@ class _$PetCopyWithImpl<$Res, $Val extends Pet> implements $PetCopyWith<$Res> {
     ) as $Val);
   }
 
+  /// Create a copy of Pet
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $BreedsCopyWith<$Res>? get breeds {
@@ -227,6 +235,8 @@ class _$PetCopyWithImpl<$Res, $Val extends Pet> implements $PetCopyWith<$Res> {
     });
   }
 
+  /// Create a copy of Pet
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $ColorsCopyWith<$Res>? get colors {
@@ -239,6 +249,8 @@ class _$PetCopyWithImpl<$Res, $Val extends Pet> implements $PetCopyWith<$Res> {
     });
   }
 
+  /// Create a copy of Pet
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $AttributesCopyWith<$Res>? get attributes {
@@ -251,6 +263,8 @@ class _$PetCopyWithImpl<$Res, $Val extends Pet> implements $PetCopyWith<$Res> {
     });
   }
 
+  /// Create a copy of Pet
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $EnvironmentCopyWith<$Res>? get environment {
@@ -263,6 +277,8 @@ class _$PetCopyWithImpl<$Res, $Val extends Pet> implements $PetCopyWith<$Res> {
     });
   }
 
+  /// Create a copy of Pet
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $ContactCopyWith<$Res>? get contact {
@@ -275,6 +291,8 @@ class _$PetCopyWithImpl<$Res, $Val extends Pet> implements $PetCopyWith<$Res> {
     });
   }
 
+  /// Create a copy of Pet
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $LinksCopyWith<$Res>? get links {
@@ -289,9 +307,10 @@ class _$PetCopyWithImpl<$Res, $Val extends Pet> implements $PetCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$$_AnimalCopyWith<$Res> implements $PetCopyWith<$Res> {
-  factory _$$_AnimalCopyWith(_$_Animal value, $Res Function(_$_Animal) then) =
-      __$$_AnimalCopyWithImpl<$Res>;
+abstract class _$$AnimalImplCopyWith<$Res> implements $PetCopyWith<$Res> {
+  factory _$$AnimalImplCopyWith(
+          _$AnimalImpl value, $Res Function(_$AnimalImpl) then) =
+      __$$AnimalImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -333,11 +352,15 @@ abstract class _$$_AnimalCopyWith<$Res> implements $PetCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_AnimalCopyWithImpl<$Res> extends _$PetCopyWithImpl<$Res, _$_Animal>
-    implements _$$_AnimalCopyWith<$Res> {
-  __$$_AnimalCopyWithImpl(_$_Animal _value, $Res Function(_$_Animal) _then)
+class __$$AnimalImplCopyWithImpl<$Res>
+    extends _$PetCopyWithImpl<$Res, _$AnimalImpl>
+    implements _$$AnimalImplCopyWith<$Res> {
+  __$$AnimalImplCopyWithImpl(
+      _$AnimalImpl _value, $Res Function(_$AnimalImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Pet
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -364,7 +387,7 @@ class __$$_AnimalCopyWithImpl<$Res> extends _$PetCopyWithImpl<$Res, _$_Animal>
     Object? contact = freezed,
     Object? links = freezed,
   }) {
-    return _then(_$_Animal(
+    return _then(_$AnimalImpl(
       id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -459,8 +482,8 @@ class __$$_AnimalCopyWithImpl<$Res> extends _$PetCopyWithImpl<$Res, _$_Animal>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Animal implements _Animal {
-  _$_Animal(
+class _$AnimalImpl implements _Animal {
+  _$AnimalImpl(
       {this.id,
       @JsonKey(name: 'organization_id') this.organizationId,
       this.url,
@@ -487,8 +510,8 @@ class _$_Animal implements _Animal {
         _photos = photos,
         _videos = videos;
 
-  factory _$_Animal.fromJson(Map<String, dynamic> json) =>
-      _$$_AnimalFromJson(json);
+  factory _$AnimalImpl.fromJson(Map<String, dynamic> json) =>
+      _$$AnimalImplFromJson(json);
 
   @override
   final int? id;
@@ -568,10 +591,10 @@ class _$_Animal implements _Animal {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Animal &&
+            other is _$AnimalImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.organizationId, organizationId) ||
                 other.organizationId == organizationId) &&
@@ -601,7 +624,7 @@ class _$_Animal implements _Animal {
             (identical(other.links, links) || other.links == links));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hashAll([
         runtimeType,
@@ -629,15 +652,17 @@ class _$_Animal implements _Animal {
         links
       ]);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Pet
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_AnimalCopyWith<_$_Animal> get copyWith =>
-      __$$_AnimalCopyWithImpl<_$_Animal>(this, _$identity);
+  _$$AnimalImplCopyWith<_$AnimalImpl> get copyWith =>
+      __$$AnimalImplCopyWithImpl<_$AnimalImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_AnimalToJson(
+    return _$$AnimalImplToJson(
       this,
     );
   }
@@ -666,9 +691,9 @@ abstract class _Animal implements Pet {
       final String? status,
       @JsonKey(name: 'published_at') final String? publishedAt,
       final Contact? contact,
-      @JsonKey(name: '_links') final Links? links}) = _$_Animal;
+      @JsonKey(name: '_links') final Links? links}) = _$AnimalImpl;
 
-  factory _Animal.fromJson(Map<String, dynamic> json) = _$_Animal.fromJson;
+  factory _Animal.fromJson(Map<String, dynamic> json) = _$AnimalImpl.fromJson;
 
   @override
   int? get id;
@@ -717,8 +742,11 @@ abstract class _Animal implements Pet {
   @override
   @JsonKey(name: '_links')
   Links? get links;
+
+  /// Create a copy of Pet
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_AnimalCopyWith<_$_Animal> get copyWith =>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$AnimalImplCopyWith<_$AnimalImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

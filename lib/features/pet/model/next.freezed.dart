@@ -12,7 +12,7 @@ part of 'next.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 Next _$NextFromJson(Map<String, dynamic> json) {
   return _Next.fromJson(json);
@@ -22,8 +22,12 @@ Next _$NextFromJson(Map<String, dynamic> json) {
 mixin _$Next {
   String? get href => throw _privateConstructorUsedError;
 
+  /// Serializes this Next to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Next
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $NextCopyWith<Next> get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -45,6 +49,8 @@ class _$NextCopyWithImpl<$Res, $Val extends Next>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Next
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -60,26 +66,30 @@ class _$NextCopyWithImpl<$Res, $Val extends Next>
 }
 
 /// @nodoc
-abstract class _$$_NextCopyWith<$Res> implements $NextCopyWith<$Res> {
-  factory _$$_NextCopyWith(_$_Next value, $Res Function(_$_Next) then) =
-      __$$_NextCopyWithImpl<$Res>;
+abstract class _$$NextImplCopyWith<$Res> implements $NextCopyWith<$Res> {
+  factory _$$NextImplCopyWith(
+          _$NextImpl value, $Res Function(_$NextImpl) then) =
+      __$$NextImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String? href});
 }
 
 /// @nodoc
-class __$$_NextCopyWithImpl<$Res> extends _$NextCopyWithImpl<$Res, _$_Next>
-    implements _$$_NextCopyWith<$Res> {
-  __$$_NextCopyWithImpl(_$_Next _value, $Res Function(_$_Next) _then)
+class __$$NextImplCopyWithImpl<$Res>
+    extends _$NextCopyWithImpl<$Res, _$NextImpl>
+    implements _$$NextImplCopyWith<$Res> {
+  __$$NextImplCopyWithImpl(_$NextImpl _value, $Res Function(_$NextImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Next
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? href = freezed,
   }) {
-    return _then(_$_Next(
+    return _then(_$NextImpl(
       href: freezed == href
           ? _value.href
           : href // ignore: cast_nullable_to_non_nullable
@@ -90,10 +100,11 @@ class __$$_NextCopyWithImpl<$Res> extends _$NextCopyWithImpl<$Res, _$_Next>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Next implements _Next {
-  _$_Next({this.href});
+class _$NextImpl implements _Next {
+  _$NextImpl({this.href});
 
-  factory _$_Next.fromJson(Map<String, dynamic> json) => _$$_NextFromJson(json);
+  factory _$NextImpl.fromJson(Map<String, dynamic> json) =>
+      _$$NextImplFromJson(json);
 
   @override
   final String? href;
@@ -104,39 +115,45 @@ class _$_Next implements _Next {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Next &&
+            other is _$NextImpl &&
             (identical(other.href, href) || other.href == href));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, href);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Next
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_NextCopyWith<_$_Next> get copyWith =>
-      __$$_NextCopyWithImpl<_$_Next>(this, _$identity);
+  _$$NextImplCopyWith<_$NextImpl> get copyWith =>
+      __$$NextImplCopyWithImpl<_$NextImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_NextToJson(
+    return _$$NextImplToJson(
       this,
     );
   }
 }
 
 abstract class _Next implements Next {
-  factory _Next({final String? href}) = _$_Next;
+  factory _Next({final String? href}) = _$NextImpl;
 
-  factory _Next.fromJson(Map<String, dynamic> json) = _$_Next.fromJson;
+  factory _Next.fromJson(Map<String, dynamic> json) = _$NextImpl.fromJson;
 
   @override
   String? get href;
+
+  /// Create a copy of Next
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_NextCopyWith<_$_Next> get copyWith => throw _privateConstructorUsedError;
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$NextImplCopyWith<_$NextImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

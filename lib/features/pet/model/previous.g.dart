@@ -6,11 +6,12 @@ part of 'previous.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_Previous _$$_PreviousFromJson(Map<String, dynamic> json) => _$_Previous(
+_$PreviousImpl _$$PreviousImplFromJson(Map<String, dynamic> json) =>
+    _$PreviousImpl(
       href: json['href'] as String?,
     );
 
-Map<String, dynamic> _$$_PreviousToJson(_$_Previous instance) =>
+Map<String, dynamic> _$$PreviousImplToJson(_$PreviousImpl instance) =>
     <String, dynamic>{
       'href': instance.href,
     };

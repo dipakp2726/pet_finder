@@ -1,3 +1,4 @@
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:pet_heaven/core/services/storage/storage_service_provider.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
@@ -30,12 +31,12 @@ class AdoptMe extends _$AdoptMe {
 
 /// provider that allows adopting pet
 @riverpod
-void adoptPet(AdoptPetRef ref, {required int petId}) {
+void adoptPet(Ref ref, {required int petId}) {
   return ref.watch(adoptMeProvider.notifier).adopt(petId);
 }
 
 /// provider to check whether given pet is adopted or not
 @riverpod
-bool isPetAdpoted(IsPetAdpotedRef ref, {required int petId}) {
+bool isPetAdpoted(Ref ref, {required int petId}) {
   return ref.watch(adoptMeProvider).contains(petId);
 }
